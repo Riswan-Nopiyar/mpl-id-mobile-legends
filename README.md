@@ -5,6 +5,8 @@
 #### Oleh: Riswan Nopiyar
 
 ---
+![screencapture-localhost-5173-2025-01-17-15_33_13](https://github.com/user-attachments/assets/5c4b36ab-3d19-4d10-ba4d-63e4bd15dd82)
+---
 
 ## Gambaran Proyek
 
@@ -17,10 +19,6 @@ Proyek ini adalah aplikasi web modern yang dibangun menggunakan teknologi beriku
 
 ---
 
-
-
-
-![screencapture-localhost-5173-2025-01-17-15_33_13](https://github.com/user-attachments/assets/5c4b36ab-3d19-4d10-ba4d-63e4bd15dd82)
 
 ## Halaman yang Tersedia
 
