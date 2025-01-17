@@ -1,0 +1,111 @@
+[
+    {
+      "rank": 1,
+      "team": "RRQ Hoshi",
+      "abbreviation": "RRQ",
+      "logo": "/esport/rrq-hoshi.png",
+      "matchPoints": 13,
+      "matchWin": 13,
+      "matchLose": 3,
+      "netGameWin": 17,
+      "gameWin": 28,
+      "gameLose": 11
+    },
+    {
+      "rank": 2,
+      "team": "Team Liquid ID",
+      "abbreviation": "TLID",
+      "logo": "/esport/team-liquid-id.png",
+      "matchPoints": 12,
+      "matchWin": 12,
+      "matchLose": 4,
+      "netGameWin": 11,
+      "gameWin": 25,
+      "gameLose": 14
+    },
+    {
+      "rank": 3,
+      "team": "Bigetron Alpha",
+      "abbreviation": "BTR",
+      "logo": "/esport/bigetron-alpha.png",
+      "matchPoints": 11,
+      "matchWin": 11,
+      "matchLose": 5,
+      "netGameWin": 12,
+      "gameWin": 26,
+      "gameLose": 14
+    },
+    {
+      "rank": 4,
+      "team": "Fnatic Onic",
+      "abbreviation": "FNOC",
+      "logo": "/esport/fnatic-onic.png",
+      "matchPoints": 10,
+      "matchWin": 10,
+      "matchLose": 6,
+      "netGameWin": 4,
+      "gameWin": 21,
+      "gameLose": 17
+    },
+    {
+      "rank": 5,
+      "team": "Geek Fam",
+      "abbreviation": "GEEK",
+      "logo": "/esport/geek-fam.png",
+      "matchPoints": 9,
+      "matchWin": 9,
+      "matchLose": 7,
+      "netGameWin": 1,
+      "gameWin": 21,
+      "gameLose": 20
+    },
+    {
+      "rank": 6,
+      "team": "Alter Ego Esports",
+      "abbreviation": "AE",
+      "logo": "/esport/alter-ego-esports.png",
+      "matchPoints": 6,
+      "matchWin": 6,
+      "matchLose": 10,
+      "netGameWin": -6,
+      "gameWin": 16,
+      "gameLose": 22
+    },
+    {
+      "rank": 7,
+      "team": "Dewa United Esports",
+      "abbreviation": "DEWA",
+      "logo": "/esport/dewa-united-esports.png",
+      "matchPoints": 5,
+      "matchWin": 5,
+      "matchLose": 11,
+      "netGameWin": -7,
+      "gameWin": 16,
+      "gameLose": 23
+    },
+    {
+      "rank": 8,
+      "team": "Rebellion Esports",
+      "abbreviation": "RBL",
+      "logo": "/esport/rebellion-esports.png",
+      "matchPoints": 3,
+      "matchWin": 3,
+      "matchLose": 13,
+      "netGameWin": -15,
+      "gameWin": 12,
+      "gameLose": 27
+    },
+    {
+      "rank": 9,
+      "team": "EVOS Glory",
+      "abbreviation": "EVOS",
+      "logo": "/esport/evos-glory.png",
+      "matchPoints": 3,
+      "matchWin": 3,
+      "matchLose": 13,
+      "netGameWin": -17,
+      "gameWin": 12,
+      "gameLose": 29
+    }
+  ]
+  

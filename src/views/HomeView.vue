@@ -1,0 +1,127 @@
+<template>
+  <section class="hero-section">
+    <Carousel ref="carousel" v-bind="carouselConfig" class="hero-carousel">
+      <Slide class="p-0">
+        <a href="#">
+          <div class="aspect-w-16 aspect-h-9">
+            <img
+              src="/images/Champions_Banner_MPLID_S14.png"
+              alt="Champions Banner MPL ID S14"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </a>
+      </Slide>
+      <Slide class="p-0">
+        <a href="#">
+          <div class="aspect-w-16 aspect-h-9">
+            <img
+              src="/images/M6nyala-Indonesia.png"
+              alt="M6 Nyala Indonesia"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </a>
+      </Slide>
+      <template #addons>
+        <button class="carousel-control prev" @click="goPrev">
+          <i class="fa fa-chevron-left"></i>
+        </button>
+        <button class="carousel-control next" @click="goNext">
+          <i class="fa fa-chevron-right"></i>
+        </button>
+      </template>
+    </Carousel>
+  </section>
+  <Standings />
+  <Trending />
+  <News />
+</template>
+
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+import "vue3-carousel/dist/carousel.css";
+import { Carousel, Slide } from "vue3-carousel";
+import Standings from "@/components/Standings.vue";
+import Trending from "@/components/Trending.vue";
+import News from "@/components/News.vue";
+
+export default defineComponent({
+  name: "HomeView",
+  components: {
+    Carousel,
+    Slide,
+    Standings,
+    Trending,
+    News,
+  },
+  setup() {
+    const carousel = ref(null);
+
+    const goPrev = () => {
+      (carousel.value as any)?.prev();
+    };
+
+    const goNext = () => {
+      (carousel.value as any)?.next();
+    };
+
+    return {
+      carousel,
+      goPrev,
+      goNext,
+      carouselConfig: {
+        wrapAround: true,
+        autoplay: 5000,
+        transition: 600,
+        snapAlign: "center",
+        itemsToShow: 1,
+      },
+    };
+  },
+});
+</script>
+
+<style scoped>
+.hero-section {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+}
+.hero-carousel {
+  position: relative;
+  width: 100%;
+}
+.hero-carousel img {
+  margin: 0;
+  padding: 0;
+}
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 -10px;
+  cursor: pointer;
+  font-size: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+.carousel-control.prev {
+  left: 10px;
+}
+.carousel-control.next {
+  right: 10px;
+}
+.carousel-control:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+</style>
