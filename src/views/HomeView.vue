@@ -36,6 +36,9 @@
   <Standings />
   <Trending />
   <News />
+  <GameHighlights />
+  <FAQ />
+  <AboutUs />
 </template>
 
 <script lang="ts">
@@ -45,6 +48,9 @@ import { Carousel, Slide } from "vue3-carousel";
 import Standings from "@/components/Standings.vue";
 import Trending from "@/components/Trending.vue";
 import News from "@/components/News.vue";
+import GameHighlights from "@/components/GameHighlights.vue";
+import FAQ from "@/components/FAQ.vue";
+import AboutUs from "@/components/AboutUs.vue";
 
 export default defineComponent({
   name: "HomeView",
@@ -54,6 +60,9 @@ export default defineComponent({
     Standings,
     Trending,
     News,
+    GameHighlights,
+    FAQ,
+    AboutUs
   },
   setup() {
     const carousel = ref(null);

@@ -1,11 +1,7 @@
 <template>
-    <section class="py-8 title-ornaments">
+    <section class="title-ornaments mt-14 pb-16">
       <div class="container mx-auto md:px-14 relative">
-        <div class="text-center">
-          <h4 class="font-origin text-gray-600 font-bold uppercase tracking-[2px] mb-6">
-            Trending
-          </h4>
-        </div>
+        <h4 class="text-center font-origin text-gray-600 font-bold uppercase">Trending</h4>
   
         <!-- Vue 3 Carousel -->
         <Carousel v-bind="carouselConfig" class="carousel-wrapper w-">

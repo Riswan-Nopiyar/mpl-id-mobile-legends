@@ -79,6 +79,46 @@ h5 {
     background-position: center;
 }
 
+.custom-select {
+    height: 40px;
+    padding: 0 10px;
+    font-size: 1rem;
+    color: #333;
+    border: 25px solid transparent;
+    border-image: url(https://id-mpl.com/images/_v1_6/ornaments/border-mplids12.png) 30 stretch;
+    background-color: white;
+    outline: none;
+    max-width: 100%;
+    border-radius: 5px;
+    appearance: none; /* Menghilangkan panah bawaan browser */
+  }
+  
+  .custom-select:focus {
+    border-color: transparent;
+    outline: 2px solid #640000; /* Fokus dengan warna merah */
+  }
+  
+  
+  /* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: #B4B4B433;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #64000070;
+  border-radius: 10px;
+}
+.relative:hover > .code-of-conduct {
+    transform: translateX(5px); /* Geser elemen PNG ke kanan */
+  }
+  
 /* Responsive Adjustments */
 
 /* sm: phone - landscape */

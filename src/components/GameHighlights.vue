@@ -1,0 +1,107 @@
+<template>
+  <section class="title-ornaments mt-14 pb-16">
+    <div class="container mx-auto md:px-20">
+      <!-- Section Title -->
+      <h4 class="text-center font-origin text-gray-600 font-bold uppercase">Game Highlights</h4>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-2">
+        <!-- Video Player -->
+        <div class="lg:col-span-2">
+          <div class="aspect-w-16 h-[400px] aspect-h-9 bg-[#640000]">
+            <iframe :src="currentVideo" frameborder="0" allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              class="w-full h-full rounded-lg"></iframe>
+          </div>
+        </div>
+
+        <!-- Playlist & Select Dropdown -->
+        <div>
+          <!-- Dropdown for Playlist Selection -->
+          <div class="mb-1 relative">
+            <select v-model="selectedCategory" @change="filterVideos"
+              class="px-2 font-bold text-lg w-[90%] mx-5 my-4 relative outline-none z-10">
+              <option v-for="category in categories" :key="category.value" :value="category.value">
+                {{ category.label }}
+              </option>
+            </select>
+            <div class="absolute inset-0 pointer-events-none bg-white" style="
+      border: 25px solid transparent;
+      border-image: url(https://id-mpl.com/images/_v1_6/ornaments/border-mplids12.png) 30 stretch;
+    "></div>
+          </div>
+
+
+          <!-- Video Playlist -->
+          <ul class="overflow-y-auto max-h-[343px] bg-transparent video-playlist">
+            <li v-for="video in filteredVideos" :key="video.id" @click="changeVideo(video.url)"
+              class="flex items-center gap-4 p-1 cursor-pointer transition-all duration-300" :class="{
+                'bg-[#640000] text-white': currentVideo === video.url
+              }">
+              <!-- Thumbnail -->
+              <div class="flex-shrink-0">
+                <img :src="video.thumbnail" :alt="video.title" class="w-[120px] object-cover" />
+              </div>
+              <!-- Title -->
+              <div class="text-sm font-medium">
+                {{ video.title }}
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import videoPlaylist from "@/assets/json/videoPlaylist.json";
+
+export default defineComponent({
+  name: "GameHighlights",
+  data() {
+    return {
+      videos: videoPlaylist,
+      filteredVideos: videoPlaylist, // Videos filtered by category
+      currentVideo: videoPlaylist[0].url, // Default video
+      selectedCategory: "playoffs", // Default category
+      categories: [
+        { value: "playoffs", label: "Playoffs" },
+        { value: "week-9", label: "Week 9" },
+        { value: "week-8", label: "Week 8" },
+        { value: "week-7", label: "Week 7" },
+        { value: "week-6", label: "Week 6" },
+        { value: "week-5", label: "Week 5" },
+        { value: "week-4", label: "Week 4" },
+        { value: "week-3", label: "Week 3" },
+        { value: "week-2", label: "Week 2" },
+        { value: "week-1", label: "Week 1" },
+      ],
+    };
+  },
+  methods: {
+    changeVideo(videoUrl: string) {
+      this.currentVideo = videoUrl; // Change current video URL
+    },
+    filterVideos() {
+      // Filter videos based on the selected category
+      this.filteredVideos = this.videos.filter(
+        (video) => video.category === this.selectedCategory
+      );
+
+      // Set the first video of the selected category as default
+      if (this.filteredVideos.length > 0) {
+        this.currentVideo = this.filteredVideos[0].url;
+      }
+    },
+  },
+  mounted() {
+    // Filter videos by default category on component mount
+    this.filterVideos();
+  },
+});
+</script>
+
+<style scoped>
+
+</style>
