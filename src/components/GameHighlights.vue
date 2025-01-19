@@ -54,7 +54,9 @@
 import { defineComponent } from "vue";
 import videoPlaylist from "@/assets/json/videoPlaylist.json";
 
+// Define interface Video
 interface Video {
+  id: number; // id sebagai integer
   title: string;
   url: string;
   thumbnail: string;
@@ -65,9 +67,9 @@ export default defineComponent({
   name: "GameHighlights",
   data() {
     return {
-      videos: videoPlaylist as Video[], 
-      filteredVideos: videoPlaylist as Video[],
-      currentVideo: (videoPlaylist as Video[])[0].url,
+      videos: videoPlaylist as Video[], // Cast JSON ke array Video[]
+      filteredVideos: videoPlaylist as Video[], // Sama seperti videos
+      currentVideo: (videoPlaylist as Video[])[0].url, // Default video URL
       selectedCategory: "playoffs",
       categories: [
         { value: "playoffs", label: "Playoffs" },
@@ -85,26 +87,21 @@ export default defineComponent({
   },
   methods: {
     changeVideo(videoUrl: string) {
-      this.currentVideo = videoUrl;
+      this.currentVideo = videoUrl; // Mengubah video yang sedang dimainkan
     },
     filterVideos() {
       this.filteredVideos = this.videos.filter(
         (video: Video) => video.category === this.selectedCategory
       );
 
-      // Set default video untuk kategori yang dipilih
+      // Set video pertama dari kategori yang dipilih sebagai default
       if (this.filteredVideos.length > 0) {
         this.currentVideo = this.filteredVideos[0].url;
       }
     },
   },
   mounted() {
-    this.filterVideos();
+    this.filterVideos(); // Filter video saat komponen dimuat
   },
 });
 </script>
-
-
-<style scoped>
-
-</style>
