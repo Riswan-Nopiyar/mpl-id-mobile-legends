@@ -54,13 +54,20 @@
 import { defineComponent } from "vue";
 import videoPlaylist from "@/assets/json/videoPlaylist.json";
 
+interface Video {
+  title: string;
+  url: string;
+  thumbnail: string;
+  category: string;
+}
+
 export default defineComponent({
   name: "GameHighlights",
   data() {
     return {
-      videos: videoPlaylist,
-      filteredVideos: videoPlaylist,
-      currentVideo: videoPlaylist[0].url,
+      videos: videoPlaylist as Video[], 
+      filteredVideos: videoPlaylist as Video[],
+      currentVideo: (videoPlaylist as Video[])[0].url,
       selectedCategory: "playoffs",
       categories: [
         { value: "playoffs", label: "Playoffs" },
@@ -76,26 +83,27 @@ export default defineComponent({
       ],
     };
   },
- methods: {
-  changeVideo(videoUrl: string) {
-    this.currentVideo = videoUrl;
-  },
-  filterVideos() {
-    this.filteredVideos = this.videos.filter(
-      (video: { category: string }) => video.category === this.selectedCategory
-    );
+  methods: {
+    changeVideo(videoUrl: string) {
+      this.currentVideo = videoUrl;
+    },
+    filterVideos() {
+      this.filteredVideos = this.videos.filter(
+        (video: Video) => video.category === this.selectedCategory
+      );
 
-    if (this.filteredVideos.length > 0) {
-      this.currentVideo = this.filteredVideos[0].url;
-    }
+      // Set default video untuk kategori yang dipilih
+      if (this.filteredVideos.length > 0) {
+        this.currentVideo = this.filteredVideos[0].url;
+      }
+    },
   },
-},
-
   mounted() {
     this.filterVideos();
   },
 });
 </script>
+
 
 <style scoped>
 
