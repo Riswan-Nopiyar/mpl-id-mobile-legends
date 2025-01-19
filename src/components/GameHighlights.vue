@@ -56,7 +56,7 @@ import videoPlaylist from "@/assets/json/videoPlaylist.json";
 
 // Define interface Video
 interface Video {
-  id: number; // id sebagai integer
+  id: string; 
   title: string;
   url: string;
   thumbnail: string;
