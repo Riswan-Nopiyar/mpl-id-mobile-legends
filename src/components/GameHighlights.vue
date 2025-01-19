@@ -24,10 +24,7 @@
                 {{ category.label }}
               </option>
             </select>
-            <div class="absolute inset-0 pointer-events-none bg-white" style="
-      border: 25px solid transparent;
-      border-image: url(https://id-mpl.com/images/_v1_6/ornaments/border-mplids12.png) 30 stretch;
-    "></div>
+            <div class="bg-select-border-playlist"></div>
           </div>
 
 
@@ -39,7 +36,7 @@
               }">
               <!-- Thumbnail -->
               <div class="flex-shrink-0">
-                <img :src="video.thumbnail" :alt="video.title" class="w-[120px] object-cover" />
+                <img :src="video.thumbnail" :alt="video.title" class="w-[120px] object-cover" loading="lazy" />
               </div>
               <!-- Title -->
               <div class="text-sm font-medium">
@@ -62,9 +59,9 @@ export default defineComponent({
   data() {
     return {
       videos: videoPlaylist,
-      filteredVideos: videoPlaylist, // Videos filtered by category
-      currentVideo: videoPlaylist[0].url, // Default video
-      selectedCategory: "playoffs", // Default category
+      filteredVideos: videoPlaylist,
+      currentVideo: videoPlaylist[0].url,
+      selectedCategory: "playoffs",
       categories: [
         { value: "playoffs", label: "Playoffs" },
         { value: "week-9", label: "Week 9" },
@@ -81,10 +78,9 @@ export default defineComponent({
   },
   methods: {
     changeVideo(videoUrl: string) {
-      this.currentVideo = videoUrl; // Change current video URL
+      this.currentVideo = videoUrl;
     },
     filterVideos() {
-      // Filter videos based on the selected category
       this.filteredVideos = this.videos.filter(
         (video) => video.category === this.selectedCategory
       );
@@ -96,7 +92,6 @@ export default defineComponent({
     },
   },
   mounted() {
-    // Filter videos by default category on component mount
     this.filterVideos();
   },
 });

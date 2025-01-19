@@ -78,25 +78,6 @@ h5 {
     background-repeat: repeat;
     background-position: center;
 }
-
-.custom-select {
-    height: 40px;
-    padding: 0 10px;
-    font-size: 1rem;
-    color: #333;
-    border: 25px solid transparent;
-    border-image: url(https://id-mpl.com/images/_v1_6/ornaments/border-mplids12.png) 30 stretch;
-    background-color: white;
-    outline: none;
-    max-width: 100%;
-    border-radius: 5px;
-    appearance: none; /* Menghilangkan panah bawaan browser */
-  }
-  
-  .custom-select:focus {
-    border-color: transparent;
-    outline: 2px solid #640000; /* Fokus dengan warna merah */
-  }
   
   
   /* width */
@@ -119,6 +100,20 @@ h5 {
     transform: translateX(5px); /* Geser elemen PNG ke kanan */
   }
   
+  .bg-select-border-playlist {
+    position: absolute;
+    inset: 0; /* Shortcut untuk top, right, bottom, left menjadi 0 */
+    pointer-events: none;
+    background-color: white;
+    border: 25px solid transparent;
+    border-image: url('../bg/border-mplids12.png') 30 stretch;
+  }
+  @layer utilities {
+    .frame-border {
+      background-image: url('../bg/frame-news.png');
+    }
+  }
+  
 /* Responsive Adjustments */
 
 /* sm: phone - landscape */
@@ -136,6 +131,7 @@ h5 {
         line-height: 5rem;
         margin-bottom: 15px;
         padding-top: 20px;
+        letter-spacing: 0.04em;
     }
     h5 {
         font-size: 4rem;

@@ -5,9 +5,10 @@
         <a href="#">
           <div class="aspect-w-16 aspect-h-9">
             <img
-              src="/images/Champions_Banner_MPLID_S14.png"
+              src="/images/Champions_Banner_MPLID_S14.webp"
               alt="Champions Banner MPL ID S14"
               class="w-full h-full object-cover"
+              loading="eager"
             />
           </div>
         </a>
@@ -16,9 +17,10 @@
         <a href="#">
           <div class="aspect-w-16 aspect-h-9">
             <img
-              src="/images/M6nyala-Indonesia.png"
+              src="/images/M6nyala-Indonesia.webp"
               alt="M6 Nyala Indonesia"
               class="w-full h-full object-cover"
+              loading="eager"
             />
           </div>
         </a>
@@ -39,6 +41,7 @@
   <GameHighlights />
   <FAQ />
   <AboutUs />
+  <Sponsors />
 </template>
 
 <script lang="ts">
@@ -51,9 +54,10 @@ import News from "@/components/News.vue";
 import GameHighlights from "@/components/GameHighlights.vue";
 import FAQ from "@/components/FAQ.vue";
 import AboutUs from "@/components/AboutUs.vue";
+import Sponsors from "@/components/Sponsors.vue";
 
 export default defineComponent({
-  name: "HomeView",
+  name: "Home",
   components: {
     Carousel,
     Slide,
@@ -62,7 +66,8 @@ export default defineComponent({
     News,
     GameHighlights,
     FAQ,
-    AboutUs
+    AboutUs,
+    Sponsors
   },
   setup() {
     const carousel = ref(null);

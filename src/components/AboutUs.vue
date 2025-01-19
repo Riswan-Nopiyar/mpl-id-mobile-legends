@@ -4,9 +4,9 @@
         <!-- Title -->
         <h4 class="text-center font-origin text-gray-600 font-bold uppercase">About uS</h4>
   
-        <div class="flex flex-col lg:flex-row items-center lg:justify-center gap-8">
+        <div class="flex flex-col lg:flex-row items-center lg:justify-center gap-14">
           <!-- Logo -->
-          <div class="lg:w-1/3 w-full max-w-sm">
+          <div class="lg:w-80 w-full max-w-sm">
             <img
               src="/images/LOGO_MPL-ID-NEW-2024-400.webp"
               alt="MPL Logo"
@@ -16,7 +16,7 @@
   
           <!-- Content -->
           <div class="lg:w-2/3">
-            <div class="space-y-6 text-gray-800">
+            <div class="text-gray-700 text-[0.9rem] leading-6">
               <p>
                 <b>Mobile Legends: Bang Bang Professional League (MPL) Indonesia</b>
                 merupakan kompetisi Mobile Legends: Bang Bang level tertinggi di Indonesia

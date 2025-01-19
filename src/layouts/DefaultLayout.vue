@@ -48,10 +48,10 @@
     >
       Tim
     </a>
-        <a href="https://id-mpl.com/transfer" class="hover:text-red-600 font-400 flex items-center">Transfer</a>
-        <a href="https://id-mpl.com/schedule" class="hover:text-red-600 font-400 flex items-center">Jadwal</a>
-        <a href="https://id-mpl.com/ticket" class="hover:text-red-600 font-400 flex items-center">Tiket</a>
-        <a href="https://id-mpl.com/career" class="hover:text-red-600 font-400 flex items-center">Career</a>
+        <a href="/transfer" class="hover:text-red-600 font-400 flex items-center">Transfer</a>
+        <a href="/schedule" class="hover:text-red-600 font-400 flex items-center">Jadwal</a>
+        <a href="/ticket" class="hover:text-red-600 font-400 flex items-center">Tiket</a>
+        <a href="/career" class="hover:text-red-600 font-400 flex items-center">Career</a>
         <a
           href="https://id-mpl.com/m6"
           class="hover:text-red-600 font-400 flex flex-col items-center text-center"
@@ -66,12 +66,12 @@
           </div>
           <span class="text-xs">#M6NYALAINDONESIA</span>
         </a>
-        <a href="https://id-mpl.com/statistics" class="hover:text-red-600 font-400 flex items-center">Statistik</a>
-        <a href="https://id-mpl.com/news" class="hover:text-red-600 font-400 flex items-center">Berita</a>
+        <a href="/statistics" class="hover:text-red-600 font-400 flex items-center">Statistik</a>
+        <a href="/news" class="hover:text-red-600 font-400 flex items-center">Berita</a>
 
         <!-- Dropdown -->
         <div class="relative group">
-          <a href="https://id-mpl.com/about" class="hover:text-red-600 font-400 flex items-center">
+          <a href="/about" class="hover:text-red-600 font-400 flex items-center">
             Tentang Kita
             <i class="icon-angle-down ml-2"></i>
           </a>
@@ -80,14 +80,14 @@
           >
             <li>
               <a
-                href="https://id-mpl.com/mpljourney"
+                href="/mpljourney"
                 class="block px-4 py-2 hover:bg-gray-100 border-b border-black"
               >
                 MPL JOURNEY
               </a>
             </li>
             <li>
-              <a href="https://id-mpl.com" class="block px-4 py-2 hover:bg-gray-100">SEASON 14</a>
+              <a href="/" class="block px-4 py-2 hover:bg-gray-100">SEASON 14</a>
             </li>
             <li>
               <a href="https://id-mpl.com/s13" class="block px-4 py-2 hover:bg-gray-100">SEASON 13</a>
@@ -164,7 +164,7 @@
         <div class="container mx-auto px-20">
           <div class="flex justify-between py-4 text-center md:text-left">
             <div class="text-gray-700">
-              Copyrights © 2025 Moonton. All Rights Reserved. Clone by Riswan Nopiyar
+              Copyrights © 2025 Moonton. All Rights Reserved. <strong>(by Riswan Nopiyar)</strong>
             </div>
           </div>
         </div>

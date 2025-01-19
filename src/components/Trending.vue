@@ -6,7 +6,7 @@
         <!-- Vue 3 Carousel -->
         <Carousel v-bind="carouselConfig" class="carousel-wrapper w-">
           <Slide
-            v-for="(item, index) in trendingItems"
+            v-for="(item, index) in trending"
             :key="index"
             class="shorts-item"
           >
@@ -15,11 +15,11 @@
                 :src="item.image"
                 :alt="item.title"
                 class="rounded-lg shadow-md w-full h-[400px] object-cover"
+                loading="lazy"
               />
             </a>
           </Slide>
   
-          <!-- Addons for Navigation and Pagination -->
           <template #addons>
             <Navigation class="custom-navigation" />
             <Pagination />
@@ -31,8 +31,9 @@
   
   <script lang="ts">
   import { defineComponent } from "vue";
-  import "vue3-carousel/dist/carousel.css"; // Import CSS untuk vue3-carousel
-  import { Carousel, Slide, Navigation, Pagination } from "vue3-carousel"; // Import komponen Carousel dan add-ons
+  import trending from "@/assets/json/trending.json";
+  import "vue3-carousel/dist/carousel.css";
+  import { Carousel, Slide, Navigation, Pagination } from "vue3-carousel";
   
   export default defineComponent({
     name: "Trending",
@@ -44,38 +45,7 @@
     },
     data() {
       return {
-        trendingItems: [
-          {
-            title: "Kabel On Point",
-            image: "https://img.youtube.com/vi/oWg6_unMkFw/maxresdefault.jpg",
-            url: "#",
-          },
-          {
-            title: "Split Push Sempurna",
-            image: "https://img.youtube.com/vi/BwugQEhMn_c/maxresdefault.jpg",
-            url: "#",
-          },
-          {
-            title: "Targeting On Point",
-            image: "https://img.youtube.com/vi/BwugQEhMn_c/maxresdefault.jpg",
-            url: "#",
-          },
-          {
-            title: "Counter Pickoff",
-            image: "https://img.youtube.com/vi/BwugQEhMn_c/maxresdefault.jpg",
-            url: "#",
-          },
-          {
-            title: "Perfect Execution",
-            image: "https://img.youtube.com/vi/BwugQEhMn_c/maxresdefault.jpg",
-            url: "#",
-          },
-          {
-            title: "Final Clash",
-            image: "https://img.youtube.com/vi/BwugQEhMn_c/maxresdefault.jpg",
-            url: "#",
-          },
-        ],
+        trending,
         carouselConfig: {
           wrapAround: true, // Carousel melingkar
           snapAlign: "center", // Item snap ke tengah

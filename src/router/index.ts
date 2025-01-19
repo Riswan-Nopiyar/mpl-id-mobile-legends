@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import DefaultLayout from "../layouts/DefaultLayout.vue";
-import HomeView from "../views/HomeView.vue";
+import Home from "../views/Home.vue";
+import Teams from "../views/Teams.vue";
 import Error404 from "../views/errors/Error404.vue";
 
 const routes = [
@@ -10,14 +11,19 @@ const routes = [
     component: DefaultLayout,
     children: [
       {
-        path: "",
-        name: "Home",
-        component: HomeView,
-      },
-      {
-        path: "/:pathMatch(.*)*", // Menangkap semua rute yang tidak cocok
+        path: "/:pathMatch(.*)*", 
         name: "Error404",
         component: Error404,
+      },
+      {
+        path: "",
+        name: "Home",
+        component: Home,
+      },
+      {
+        path: "/teams",
+        name: "Teams",
+        component: Teams,
       },
     ],
   },
