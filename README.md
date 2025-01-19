@@ -5,7 +5,8 @@
 #### Oleh: Riswan Nopiyar
 
 ---
-![screencapture-localhost-5173-2025-01-17-15_33_13](https://github.com/user-attachments/assets/5c4b36ab-3d19-4d10-ba4d-63e4bd15dd82)
+![screencapture-localhost-5173-2025-01-20-01_37_38](https://github.com/user-attachments/assets/e37e8207-8b79-49c5-bde6-499178c5386a)
+![screencapture-localhost-5173-teams-2025-01-20-01_38_00](https://github.com/user-attachments/assets/2d990fdc-b981-4976-8f1f-04e2a52ee4c6)
 ---
 
 ## Gambaran Proyek
