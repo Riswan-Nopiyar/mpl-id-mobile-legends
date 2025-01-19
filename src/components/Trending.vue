@@ -34,7 +34,13 @@
   import trending from "@/assets/json/trending.json";
   import "vue3-carousel/dist/carousel.css";
   import { Carousel, Slide, Navigation, Pagination } from "vue3-carousel";
-  
+
+  interface TrendingData {
+    title: string;
+    image: string;
+    url: string;
+  }
+
   export default defineComponent({
     name: "Trending",
     components: {
@@ -45,7 +51,7 @@
     },
     data() {
       return {
-        trending,
+        trending: trending as TrendingData[], // Menyatakan tipe data dengan interface
         carouselConfig: {
           wrapAround: true, // Carousel melingkar
           snapAlign: "center", // Item snap ke tengah
@@ -63,5 +69,4 @@
       };
     },
   });
-  </script>
-  
+</script>

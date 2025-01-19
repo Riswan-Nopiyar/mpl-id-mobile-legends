@@ -63,12 +63,24 @@
 import { defineComponent } from "vue";
 import News from "@/assets/json/News.json";
 
+interface HighlightNews {
+  image: string;
+  title: string;
+  date: string;
+  url: string;
+}
+
+interface NewsData {
+  highlightNews: HighlightNews[];
+  subNews: HighlightNews[];
+}
+
 export default defineComponent({
-  name: "NewsSection",
+  name: "News",
   data() {
     return {
-      highlightNews: News.highlightNews,
-      subNews: News.subNews
+      highlightNews: News.highlightNews as HighlightNews[],
+      subNews: News.subNews as HighlightNews[], 
     };
   },
   methods: {
@@ -81,3 +93,4 @@ export default defineComponent({
   }
 });
 </script>
+

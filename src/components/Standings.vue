@@ -47,18 +47,28 @@
   <script lang="ts">
   import { defineComponent } from "vue";
   import standings from "@/assets/json/standings.json";
-  
+
+  interface StandingsData {
+    rank: number;
+    team: string;
+    abbreviation: string;
+    logo: string;
+    matchPoints: number;
+    matchWin: number;
+    matchLose: number;
+    netGameWin: number;
+    gameWin: number;
+    gameLose: number;
+  }
+
   export default defineComponent({
     name: "Standings",
     data() {
       return {
-        standings,
+        standings: standings as StandingsData[], 
       };
     },
   });
-  </script>
-  
-  <style scoped>
-  /* Tambahkan gaya yang diperlukan */
-  </style>
+</script>
+
   
