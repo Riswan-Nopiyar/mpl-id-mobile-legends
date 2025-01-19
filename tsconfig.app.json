@@ -11,6 +11,8 @@
     "noUncheckedSideEffectImports": true,
 
     "resolveJsonModule": true,
+
+    "types": ["vite/client"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/types/**/*.d.ts"]
 }

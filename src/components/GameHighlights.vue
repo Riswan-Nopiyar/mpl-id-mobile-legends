@@ -76,21 +76,21 @@ export default defineComponent({
       ],
     };
   },
-  methods: {
-    changeVideo(videoUrl: string) {
-      this.currentVideo = videoUrl;
-    },
-    filterVideos() {
-      this.filteredVideos = this.videos.filter(
-        (video) => video.category === this.selectedCategory
-      );
-
-      // Set the first video of the selected category as default
-      if (this.filteredVideos.length > 0) {
-        this.currentVideo = this.filteredVideos[0].url;
-      }
-    },
+ methods: {
+  changeVideo(videoUrl: string) {
+    this.currentVideo = videoUrl;
   },
+  filterVideos() {
+    this.filteredVideos = this.videos.filter(
+      (video: { category: string }) => video.category === this.selectedCategory
+    );
+
+    if (this.filteredVideos.length > 0) {
+      this.currentVideo = this.filteredVideos[0].url;
+    }
+  },
+},
+
   mounted() {
     this.filterVideos();
   },
