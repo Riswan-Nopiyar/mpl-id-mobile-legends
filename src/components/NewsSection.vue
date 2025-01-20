@@ -60,7 +60,7 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import type { PropType } from "vue"; // Menggunakan type-only import
-import News from "@/assets/json/News.json";
+import News from "@/assets/json/news.json";
 
 // Definisi Interface untuk tipe props
 interface HighlightNews {
