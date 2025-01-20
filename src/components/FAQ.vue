@@ -7,7 +7,7 @@
 
       <!-- FAQ List -->
       <div
-        class="scroll-wrapper faq scrollbar-inner overflow-y-scroll"
+        class="scroll-wrapper faq scrollbar-inner overflow-y-scroll mx-3"
         style="max-height: 500px;"
       >
         <div
@@ -43,7 +43,7 @@
 
 
       <!-- Code of Conduct Button -->
-      <div class="mt-4">
+      <div class="mt-4 mx-3">
         <a
           href="https://id-mpl.com/codeofconduct"
           class="relative inline-block pl-16 pr-10 py-3 text-white text-sm font-semibold rounded-md bg-gradient-to-b from-red-600 to-red-900 hover:from-red-500 hover:to-red-800 transition duration-200"
@@ -63,7 +63,7 @@
 
       <!-- Questions Section -->
       <div
-        class="flex flex-col lg:flex-row items-start lg:items-center mt-2 border-t border-dashed border-gray-300 pt-4 text-sm"
+        class="flex flex-col lg:flex-row items-start lg:items-center mt-2 border-t border-dashed border-gray-300 pt-4 text-sm mx-3"
       >
         <img
           src="/icons/question.png"

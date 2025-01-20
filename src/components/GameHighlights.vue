@@ -4,10 +4,10 @@
       <!-- Section Title -->
       <h4 class="text-center font-origin text-gray-600 font-bold uppercase">Game Highlights</h4>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-2">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 mx-3">
         <!-- Video Player -->
         <div class="lg:col-span-2">
-          <div class="aspect-w-16 h-[400px] aspect-h-9 bg-[#640000]">
+          <div class="aspect-w-16 h-auto sm:h-[400px] aspect-h-9 bg-[#640000]">
             <iframe :src="currentVideo" frameborder="0" allowfullscreen
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               class="w-full h-full rounded-lg"></iframe>
@@ -19,7 +19,7 @@
           <!-- Dropdown for Playlist Selection -->
           <div class="mb-1 relative">
             <select v-model="selectedCategory"
-              class="px-2 font-bold text-lg w-[90%] mx-5 my-4 relative outline-none z-10" @change="filterVideos">
+              class="px-2 font-bold text-lg w-[90%] mx-5 my-4 relative outline-none z-10 bg-transparent" @change="filterVideos">
               <option v-for="category in categories" :key="category.value" :value="category.value">
                 {{ category.label }}
               </option>

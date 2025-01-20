@@ -4,7 +4,7 @@
       <h4 class="text-center font-origin text-gray-600 font-bold uppercase">News</h4>
 
       <!-- Highlight News -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mx-3">
         <div v-for="(news, index) in highlightNews" :key="index">
           <a :href="news.url" target="_blank" class="block">
             <div class="relative h-80 rounded-lg shadow-md bg-black flex items-center justify-center overflow-hidden">
@@ -21,7 +21,7 @@
       </div>
 
       <!-- Sub News -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mt-3">
+      <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 lg:gap-6 mt-3 mx-3">
         <div v-for="(newsGroup, groupIndex) in subNews" :key="groupIndex" class="sub-news">
           <div v-for="(news, index) in newsGroup" :key="index" class="mb-4">
             <a :href="news.url" target="_blank" class="flex items-center justify-center">

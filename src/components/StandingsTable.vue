@@ -2,7 +2,7 @@
     <section class="title-ornaments mt-14 pb-16">
       <div class="container mx-auto md:px-20">
         <h4 class="text-center font-origin text-gray-600 font-bold uppercase">Standings</h4>
-        <div class="mx-3 md:mx-3">
+        <div class="mx-3">
         <table class="mb-2 w-full border-collapse bg-white text-left shadow-md uppercase">
           <thead>
             <tr class="bg-black text-white text-center text-xs md:text-[0.9rem]">

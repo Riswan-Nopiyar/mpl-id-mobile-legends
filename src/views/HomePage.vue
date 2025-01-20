@@ -118,6 +118,7 @@ export default defineComponent({
   margin: 0;
   padding: 0;
 }
+/* Gaya default untuk .carousel-control */
 .carousel-control {
   position: absolute;
   top: 50%;
@@ -145,4 +146,20 @@ export default defineComponent({
   background: rgba(0, 0, 0, 0.8);
   transform: translateY(-50%) scale(1.1);
 }
+
+/* Media query untuk layar di bawah ukuran md (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  .carousel-control {
+    font-size: 20px; /* Ukuran font lebih kecil */
+    padding: 8px 10px; /* Padding lebih kecil */
+    margin: 0 -5px; /* Margin lebih kecil */
+  }
+  .carousel-control.prev {
+    left: 5px; /* Jarak dari kiri lebih kecil */
+  }
+  .carousel-control.next {
+    right: 5px; /* Jarak dari kanan lebih kecil */
+  }
+}
+
 </style>

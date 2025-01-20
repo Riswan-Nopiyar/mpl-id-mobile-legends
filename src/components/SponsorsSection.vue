@@ -1,7 +1,7 @@
 <template>
   <section class="pb-10 pt-14">
     <div class="container mx-auto">
-      <div class="flex flex-wrap justify-center items-start gap-8">
+      <div class="flex flex-wrap justify-center items-start gap-8 mx-3">
         <!-- Presented By -->
         <div class="text-center border-r border-gray-300 pr-8 w-36">
           <div class="text-xs">
@@ -79,7 +79,7 @@
       </div>
   
       <!-- Second Row -->
-      <div class="flex flex-wrap justify-center items-start gap-4 mt-6">
+      <div class="flex flex-wrap justify-center items-start gap-4 mt-6 mx-3">
         <!-- Partner in Esports -->
         <div class="text-center w-full">
           <div class="text-xs mb-2">

@@ -6,7 +6,7 @@
         About uS
       </h4>
   
-      <div class="flex flex-col lg:flex-row items-center lg:justify-center gap-14">
+      <div class="flex flex-col lg:flex-row items-center lg:justify-center gap-14 mx-3">
         <!-- Logo -->
         <div class="lg:w-80 w-full max-w-sm">
           <img

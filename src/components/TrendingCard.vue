@@ -14,7 +14,7 @@
               <img
                 :src="item.image"
                 :alt="item.title"
-                class="rounded-lg shadow-md w-full h-[400px] object-cover"
+                class="rounded-lg shadow-md w-52 md:w-full h-[400px] object-cover"
                 loading="lazy"
               />
             </a>
