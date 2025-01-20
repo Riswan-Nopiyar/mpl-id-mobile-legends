@@ -93,7 +93,6 @@ src/
 
 ## Perkembangan Proyek
 
-- **Progres Keseluruhan**: 20%
 - **Fitur yang Selesai**:
   - Pengaturan dasar proyek dengan Vite
   - Integrasi TailwindCSS
