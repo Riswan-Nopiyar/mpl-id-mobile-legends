@@ -66,7 +66,7 @@ v-for="team in standings" :key="team.rank" :class="{ 'bg-red-300': team.rank > s
     name: "StandingsTable",
     data() {
       return {
-        standings: standings as StandingsData[], 
+        standings: standings as unknown as StandingsData[],
       };
     },
   });

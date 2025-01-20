@@ -51,7 +51,7 @@
     },
     data() {
       return {
-        trending: trending as TrendingData[], // Menyatakan tipe data dengan interface
+        trending: trending as unknown as TrendingData[],
         carouselConfig: {
           wrapAround: true, // Carousel melingkar
           snapAlign: "center", // Item snap ke tengah

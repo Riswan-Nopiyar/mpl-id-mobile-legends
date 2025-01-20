@@ -8,8 +8,7 @@
         <!-- Video Player -->
         <div class="lg:col-span-2">
           <div class="aspect-w-16 h-[400px] aspect-h-9 bg-[#640000]">
-            <iframe
-:src="currentVideo" frameborder="0" allowfullscreen
+            <iframe :src="currentVideo" frameborder="0" allowfullscreen
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               class="w-full h-full rounded-lg"></iframe>
           </div>
@@ -19,9 +18,8 @@
         <div>
           <!-- Dropdown for Playlist Selection -->
           <div class="mb-1 relative">
-            <select
-v-model="selectedCategory" class="px-2 font-bold text-lg w-[90%] mx-5 my-4 relative outline-none z-10"
-              @change="filterVideos">
+            <select v-model="selectedCategory"
+              class="px-2 font-bold text-lg w-[90%] mx-5 my-4 relative outline-none z-10" @change="filterVideos">
               <option v-for="category in categories" :key="category.value" :value="category.value">
                 {{ category.label }}
               </option>
@@ -32,9 +30,8 @@ v-model="selectedCategory" class="px-2 font-bold text-lg w-[90%] mx-5 my-4 relat
 
           <!-- Video Playlist -->
           <ul class="overflow-y-auto max-h-[343px] bg-transparent video-playlist">
-            <li
-v-for="video in filteredVideos" :key="video.id" class="flex items-center gap-4 p-1 cursor-pointer transition-all duration-300"
-              :class="{
+            <li v-for="video in filteredVideos" :key="video.id"
+              class="flex items-center gap-4 p-1 cursor-pointer transition-all duration-300" :class="{
                 'bg-[#640000] text-white': currentVideo === video.url
               }" @click="changeVideo(video.url)">
               <!-- Thumbnail -->
@@ -59,7 +56,7 @@ import videoPlaylist from "@/assets/json/videoPlaylist.json";
 
 // Define interface Video
 interface Video {
-  id: string; 
+  id: string;
   title: string;
   url: string;
   thumbnail: string;
@@ -70,9 +67,9 @@ export default defineComponent({
   name: "GameHighlights",
   data() {
     return {
-      videos: videoPlaylist as Video[], // Cast JSON ke array Video[]
-      filteredVideos: videoPlaylist as Video[], // Sama seperti videos
-      currentVideo: (videoPlaylist as Video[])[0].url, // Default video URL
+      videos: videoPlaylist as unknown as Video[],
+      filteredVideos: videoPlaylist as unknown as Video[],
+      currentVideo: (videoPlaylist as unknown as Video[])[0].url,
       selectedCategory: "playoffs",
       categories: [
         { value: "playoffs", label: "Playoffs" },

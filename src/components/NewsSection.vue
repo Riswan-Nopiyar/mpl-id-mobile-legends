@@ -58,8 +58,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from "vue";
-import News from "@/assets/json/News.json"; // Menggunakan JSON sebagai data fallback
+import { defineComponent } from "vue";
+import type { PropType } from "vue"; // Menggunakan type-only import
+import News from "@/assets/json/News.json";
 
 // Definisi Interface untuk tipe props
 interface HighlightNews {
@@ -105,6 +106,7 @@ export default defineComponent({
   },
 });
 </script>
+
 
 <style scoped>
 .title-ornaments {

@@ -56,8 +56,11 @@ import FAQ from "@/components/FAQ.vue";
 import AboutUs from "@/components/AboutUs.vue";
 import SponsorsSection from "@/components/SponsorsSection.vue";
 
-// Import tipe bawaan untuk Carousel dari vue3-carousel
-import type { CarouselInstance } from "vue3-carousel";
+// Deklarasi manual tipe CarouselInstance jika tidak tersedia
+interface CarouselInstance {
+  prev: () => void;
+  next: () => void;
+}
 
 export default defineComponent({
   name: "HomePage",
@@ -77,11 +80,11 @@ export default defineComponent({
     const carousel = ref<CarouselInstance | null>(null);
 
     const goPrev = () => {
-      carousel.value?.prev(); // Tidak ada `any` di sini
+      carousel.value?.prev(); // Memanggil metode prev pada instance Carousel
     };
 
     const goNext = () => {
-      carousel.value?.next(); // Tidak ada `any` di sini
+      carousel.value?.next(); // Memanggil metode next pada instance Carousel
     };
 
     return {
