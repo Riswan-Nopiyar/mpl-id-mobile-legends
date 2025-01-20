@@ -1,6 +1,6 @@
 # Vue 3 + TypeScript + Vite + TailwindCSS
 
-<span style="font-size:2.5rem;">LInk : <a href="https://mpl-indonesia.vercel.app/">Demo https://mpl-indonesia.vercel.app/</a></span>
+Link Demo : <a href="https://mpl-indonesia.vercel.app/">https://mpl-indonesia.vercel.app/</a>
 ### Path Url : "/" and "/teams"
 
 #### Oleh: Riswan Nopiyar
