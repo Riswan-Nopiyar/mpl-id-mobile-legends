@@ -9,8 +9,8 @@
       <!-- Mobile Menu Trigger -->
       <div
         id="primary-menu-trigger"
-        @click="toggleMenu"
         class="block lg:hidden cursor-pointer"
+        @click="toggleMenu"
       >
         <svg
           :class="{ 'rotate-45': isMenuOpen }"
@@ -119,31 +119,36 @@
               <!-- Social Media Icons -->
               <ul id="top-social" class="flex space-x-4">
                 <li>
-                  <a href="https://www.facebook.com/mpl.id.official/?ref=bookmarks" target="_blank"
+                  <a
+href="https://www.facebook.com/mpl.id.official/?ref=bookmarks" target="_blank"
                     class="text-white hover:text-gray-300">
                     <i class="fab fa-facebook"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/mpl.id.official/?hl=en" target="_blank"
+                  <a
+href="https://www.instagram.com/mpl.id.official/?hl=en" target="_blank"
                     class="text-white hover:text-gray-300">
                     <i class="fab fa-instagram"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.youtube.com/channel/UC1dGHGJTXU_dkiR8tW3qQgg" target="_blank"
+                  <a
+href="https://www.youtube.com/channel/UC1dGHGJTXU_dkiR8tW3qQgg" target="_blank"
                     class="text-white hover:text-gray-300">
                     <i class="fab fa-youtube"></i>
                   </a>
                 </li>
                 <li>
                   <a href="https://twitter.com/mplidofficial" target="_blank" class="text-white hover:text-gray-300">
-                    <img src="https://id-mpl.com/images/_v1_6/icons/new-x-14.png" alt="Twitter Icon"
+                    <img
+src="https://id-mpl.com/images/_v1_6/icons/new-x-14.png" alt="Twitter Icon"
                       class="w-4 h-4 inline-block" />
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.tiktok.com/tag/mplditiktok?lang=en" target="_blank"
+                  <a
+href="https://www.tiktok.com/tag/mplditiktok?lang=en" target="_blank"
                     class="text-white hover:text-gray-300">
                     <i class="fab fa-tiktok"></i>
                   </a>
@@ -153,8 +158,8 @@
 
             <div class="md:mt-0 lg:hidden">
               <button
-                class="bg-red-950 text-white hover:bg-[#640000] my-0 py-3 px-8 text-sm shadow-lg focus:outline-none"
-                id="gotoTop">
+                id="gotoTop"
+                class="bg-red-950 text-white hover:bg-[#640000] my-0 py-3 px-8 text-sm shadow-lg focus:outline-none">
                 <i class="fas fa-angle-up"></i>
               </button>
             </div>

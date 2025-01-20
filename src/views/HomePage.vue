@@ -35,49 +35,53 @@
       </template>
     </Carousel>
   </section>
-  <Standings />
-  <Trending />
-  <News />
+  <StandingsTable />
+  <TrendingCard />
+  <NewsSection />
   <GameHighlights />
   <FAQ />
   <AboutUs />
-  <Sponsors />
+  <SponsorsSection />
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide } from "vue3-carousel";
-import Standings from "@/components/Standings.vue";
-import Trending from "@/components/Trending.vue";
-import News from "@/components/News.vue";
+import StandingsTable from "@/components/StandingsTable.vue";
+import TrendingCard from "@/components/TrendingCard.vue";
+import NewsSection from "@/components/NewsSection.vue";
 import GameHighlights from "@/components/GameHighlights.vue";
 import FAQ from "@/components/FAQ.vue";
 import AboutUs from "@/components/AboutUs.vue";
-import Sponsors from "@/components/Sponsors.vue";
+import SponsorsSection from "@/components/SponsorsSection.vue";
+
+// Import tipe bawaan untuk Carousel dari vue3-carousel
+import type { CarouselInstance } from "vue3-carousel";
 
 export default defineComponent({
-  name: "Home",
+  name: "HomePage",
   components: {
     Carousel,
     Slide,
-    Standings,
-    Trending,
-    News,
+    StandingsTable,
+    TrendingCard,
+    NewsSection,
     GameHighlights,
     FAQ,
     AboutUs,
-    Sponsors
+    SponsorsSection,
   },
   setup() {
-    const carousel = ref(null);
+    // Tipe spesifik: carousel adalah referensi ke CarouselInstance
+    const carousel = ref<CarouselInstance | null>(null);
 
     const goPrev = () => {
-      (carousel.value as any)?.prev();
+      carousel.value?.prev(); // Tidak ada `any` di sini
     };
 
     const goNext = () => {
-      (carousel.value as any)?.next();
+      carousel.value?.next(); // Tidak ada `any` di sini
     };
 
     return {

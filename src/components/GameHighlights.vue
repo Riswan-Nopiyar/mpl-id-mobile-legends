@@ -8,7 +8,8 @@
         <!-- Video Player -->
         <div class="lg:col-span-2">
           <div class="aspect-w-16 h-[400px] aspect-h-9 bg-[#640000]">
-            <iframe :src="currentVideo" frameborder="0" allowfullscreen
+            <iframe
+:src="currentVideo" frameborder="0" allowfullscreen
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               class="w-full h-full rounded-lg"></iframe>
           </div>
@@ -18,8 +19,9 @@
         <div>
           <!-- Dropdown for Playlist Selection -->
           <div class="mb-1 relative">
-            <select v-model="selectedCategory" @change="filterVideos"
-              class="px-2 font-bold text-lg w-[90%] mx-5 my-4 relative outline-none z-10">
+            <select
+v-model="selectedCategory" class="px-2 font-bold text-lg w-[90%] mx-5 my-4 relative outline-none z-10"
+              @change="filterVideos">
               <option v-for="category in categories" :key="category.value" :value="category.value">
                 {{ category.label }}
               </option>
@@ -30,10 +32,11 @@
 
           <!-- Video Playlist -->
           <ul class="overflow-y-auto max-h-[343px] bg-transparent video-playlist">
-            <li v-for="video in filteredVideos" :key="video.id" @click="changeVideo(video.url)"
-              class="flex items-center gap-4 p-1 cursor-pointer transition-all duration-300" :class="{
+            <li
+v-for="video in filteredVideos" :key="video.id" class="flex items-center gap-4 p-1 cursor-pointer transition-all duration-300"
+              :class="{
                 'bg-[#640000] text-white': currentVideo === video.url
-              }">
+              }" @click="changeVideo(video.url)">
               <!-- Thumbnail -->
               <div class="flex-shrink-0">
                 <img :src="video.thumbnail" :alt="video.title" class="w-[120px] object-cover" loading="lazy" />
@@ -85,6 +88,9 @@ export default defineComponent({
       ],
     };
   },
+  mounted() {
+    this.filterVideos(); // Filter video saat komponen dimuat
+  },
   methods: {
     changeVideo(videoUrl: string) {
       this.currentVideo = videoUrl; // Mengubah video yang sedang dimainkan
@@ -99,9 +105,6 @@ export default defineComponent({
         this.currentVideo = this.filteredVideos[0].url;
       }
     },
-  },
-  mounted() {
-    this.filterVideos(); // Filter video saat komponen dimuat
   },
 });
 </script>

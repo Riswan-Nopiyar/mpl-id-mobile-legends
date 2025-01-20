@@ -42,7 +42,7 @@
   }
 
   export default defineComponent({
-    name: "Trending",
+    name: "TrendingCard",
     components: {
       Carousel,
       Slide,

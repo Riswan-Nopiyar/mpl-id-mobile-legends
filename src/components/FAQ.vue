@@ -1,41 +1,61 @@
 <template>
   <section class="title-ornaments mt-14 pb-16">
     <div class="container mx-auto md:px-20">
-        <h4 class="text-center font-origin text-gray-600 font-bold uppercase">FAQ</h4>
+      <h4 class="text-center font-origin text-gray-600 font-bold uppercase">
+        FAQ
+      </h4>
 
       <!-- FAQ List -->
-      <div class="scroll-wrapper faq scrollbar-inner overflow-y-scroll" style="max-height: 500px;">
-  <div v-for="(faq, index) in faqs" :key="index" class="toggle mb-4">
-    <div class="toggle-header flex items-center cursor-pointer" @click="toggleFAQ(index)">
-      <div class="toggle-icon mr-3">
-        <i :class="faq.open ? 'fas fa-minus-circle text-[#640000]' : 'fas fa-plus-circle text-[#640000]'"></i>
+      <div
+        class="scroll-wrapper faq scrollbar-inner overflow-y-scroll"
+        style="max-height: 500px;"
+      >
+        <div
+          v-for="(faq, index) in faqs"
+          :key="index"
+          class="toggle mb-4"
+        >
+          <div
+            class="toggle-header flex items-center cursor-pointer"
+            @click="toggleFAQ(index)"
+          >
+            <div class="toggle-icon mr-3">
+              <i :class="faq.open ? 'fas fa-minus-circle text-[#640000]' : 'fas fa-plus-circle text-[#640000]'" />
+            </div>
+            <div class="toggle-title font-medium text-gray-800">
+              {{ faq.question }}
+            </div>
+          </div>
+          <transition name="faq-toggle">
+            <div
+              v-if="faq.open"
+              class="toggle-content m-4"
+            >
+              <p
+                class="text-gray-600"
+                v-html="faq.answer"
+              />
+            </div>
+          </transition>
+          <div class="line border-t border-b-1 border-gray-300 mt-2" />
+        </div>
       </div>
-      <div class="toggle-title font-medium text-gray-800">{{ faq.question }}</div>
-    </div>
-    <transition name="faq-toggle">
-      <div v-if="faq.open" class="toggle-content m-4">
-        <p v-html="faq.answer" class="text-gray-600"></p>
-      </div>
-    </transition>
-    <div class="line border-t border-b-1 border-gray-300 mt-2"></div>
-  </div>
-</div>
 
 
-  <!-- Code of Conduct Button -->
-  <div class="mt-4">
-  <a
-    href="https://id-mpl.com/codeofconduct"
-    class="relative inline-block pl-16 pr-10 py-3 text-white text-sm font-semibold rounded-md bg-gradient-to-b from-red-600 to-red-900 hover:from-red-500 hover:to-red-800 transition duration-200"
-  >
-    Code of Conduct
-    <span
-      class="code-of-conduct absolute inset-0 -top-0.5 -left-1.5 w-14 h-[calc(100%+4px)] rounded-l-md bg-white bg-center bg-no-repeat transition-all duration-200 ease-in-out"
-      style="background-image: url('https://id-mpl.com/images/_v1_6/ornaments/coc.png'); background-size: 25px; clip-path: polygon(85% 0, 100% 50%, 85% 100%, 0 100%, 0 0);"
-    ></span>
-    <span class="absolute inset-0 m-[3px] border-2 border-[#E1C4C4] rounded-md pointer-events-none"></span>
-  </a>
-</div>
+      <!-- Code of Conduct Button -->
+      <div class="mt-4">
+        <a
+          href="https://id-mpl.com/codeofconduct"
+          class="relative inline-block pl-16 pr-10 py-3 text-white text-sm font-semibold rounded-md bg-gradient-to-b from-red-600 to-red-900 hover:from-red-500 hover:to-red-800 transition duration-200"
+        >
+          Code of Conduct
+          <span
+            class="code-of-conduct absolute inset-0 -top-0.5 -left-1.5 w-14 h-[calc(100%+4px)] rounded-l-md bg-white bg-center bg-no-repeat transition-all duration-200 ease-in-out"
+            style="background-image: url('https://id-mpl.com/images/_v1_6/ornaments/coc.png'); background-size: 25px; clip-path: polygon(85% 0, 100% 50%, 85% 100%, 0 100%, 0 0);"
+          />
+          <span class="absolute inset-0 m-[3px] border-2 border-[#E1C4C4] rounded-md pointer-events-none" />
+        </a>
+      </div>
 
 
 
@@ -49,11 +69,15 @@
           src="/icons/question.png"
           alt="Question Icon"
           class="max-h-6 mb-4 lg:mb-0 lg:mr-2"
-        />
+        >
         <div>
           <b>Punya pertanyaan?</b> Langsung tanya di <b>Instagram MPL Indonesia</b> kita!
           Link:
-          <a href="https://www.instagram.com/mpl.id.official" target="_blank" class="text-red-600">
+          <a
+            href="https://www.instagram.com/mpl.id.official"
+            target="_blank"
+            class="text-red-600"
+          >
             https://www.instagram.com/mpl.id.official
           </a>
         </div>

@@ -1,5 +1,5 @@
 declare module "*.json" {
-    const value: any;
-    export default value;
-  }
-  
+  // Menggunakan `Record<string, unknown>` jika JSON adalah objek dengan key-value
+  const value: Record<string, unknown>;
+  export default value;
+}

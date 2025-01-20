@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import DefaultLayout from "../layouts/DefaultLayout.vue";
-import Home from "../views/Home.vue";
-import Teams from "../views/Teams.vue";
-import Error404 from "../views/errors/Error404.vue";
+import HomePage from "../views/HomePage.vue";
+import TeamsEsport from "../views/TeamsEsport.vue";
+import PageError404 from "../views/errors/PageError404.vue";
 
 const routes = [
   {
@@ -13,17 +13,17 @@ const routes = [
       {
         path: "/:pathMatch(.*)*", 
         name: "Error404",
-        component: Error404,
+        component: PageError404,
       },
       {
         path: "",
         name: "Home",
-        component: Home,
+        component: HomePage,
       },
       {
         path: "/teams",
         name: "Teams",
-        component: Teams,
+        component: TeamsEsport,
       },
     ],
   },
