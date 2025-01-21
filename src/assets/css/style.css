@@ -16,8 +16,8 @@
 @font-face {
     font-family: 'Origin Super Condensed';
     src: url('/fonts/origin/OriginSuperCondensed-Bold.woff2') format('woff2'),
-         url('/fonts/origin/OriginSuperCondensed-Bold.woff') format('woff'),
-         url('/fonts/origin/OriginSuperCondensed-Bold.ttf') format('truetype');
+        url('/fonts/origin/OriginSuperCondensed-Bold.woff') format('woff'),
+        url('/fonts/origin/OriginSuperCondensed-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -25,7 +25,8 @@
 
 @font-face {
     font-family: 'Astoria';
-    src: url('/fonts/astoria/AstoriaRoman.woff2') format('woff2'); /* Gunakan path absolut */
+    src: url('/fonts/astoria/AstoriaRoman.woff2') format('woff2');
+    /* Gunakan path absolut */
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -37,13 +38,16 @@ h4 {
     font-size: 3.5rem;
     margin-bottom: 0px;
 }
+
 h5 {
     font-size: 2.5rem;
     margin-bottom: 0px;
 }
+
 .title-ornaments {
     position: relative;
 }
+
 .title-ornaments::before {
     content: '';
     position: absolute;
@@ -57,6 +61,7 @@ h5 {
     background-position: top left;
     opacity: 0.1;
 }
+
 .title-ornaments::after {
     content: '';
     position: absolute;
@@ -78,51 +83,59 @@ h5 {
     background-repeat: repeat;
     background-position: center;
 }
-  
-  
-  /* width */
+
+
+/* width */
 ::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background-color: #B4B4B433;
-  border-radius: 10px;
+    background-color: #B4B4B433;
+    border-radius: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #64000070;
-  border-radius: 10px;
+    background: #64000070;
+    border-radius: 10px;
 }
-.relative:hover > .code-of-conduct {
-    transform: translateX(5px); /* Geser elemen PNG ke kanan */
-  }
-  
-  .bg-select-border-playlist {
+
+.relative:hover>.code-of-conduct {
+    transform: translateX(5px);
+    /* Geser elemen PNG ke kanan */
+}
+
+.bg-select-border-playlist {
     position: absolute;
-    inset: 0; /* Shortcut untuk top, right, bottom, left menjadi 0 */
+    inset: 0;
+    /* Shortcut untuk top, right, bottom, left menjadi 0 */
     pointer-events: none;
     background-color: white;
     border: 25px solid transparent;
     border-image: url('../bg/border-mplids12.png') 30 stretch;
-  }
-  @layer utilities {
+}
+
+@layer utilities {
     .frame-border {
-      background-image: url('../bg/frame-news.png');
+        background-image: url('../bg/frame-news.png');
     }
-  }
-  
+    .mpl-shadow {
+        filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.35));
+    }
+    
+}
+
 /* Responsive Adjustments */
 
 /* sm: phone - landscape */
 @media (min-width: 576px) {
+
 }
 
 /* md: tablet */
-@media (min-width: 768px) {
-}
+@media (min-width: 768px) {}
 
 /* lg: desktop */
 @media (min-width: 992px) {
@@ -133,19 +146,23 @@ h5 {
         padding-top: 20px;
         letter-spacing: 0.04em;
     }
+
     h5 {
         font-size: 4rem;
         margin-bottom: 10px;
     }
+
     .bg-barong {
         background-size: 100% auto;
     }
+
     .title-ornaments::before {
         top: 20px;
         left: 0px;
         width: 500px;
         height: 80px;
     }
+
     .title-ornaments::after {
         top: 20px;
         right: 0px;
