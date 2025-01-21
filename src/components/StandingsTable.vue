@@ -1,5 +1,4 @@
 <template>
-    <section class="title-ornaments mt-14 pb-16">
       <div class="container mx-auto md:px-20">
         <h4 class="text-center font-origin text-gray-600 font-bold uppercase">Standings</h4>
         <div class="mx-3">
@@ -42,7 +41,6 @@ v-for="team in standings" :key="team.rank" :class="{ 'bg-red-300': team.rank > s
         <span class="font-bold text-gray-600">*Tiga posisi terbawah tidak lolos ke babak playoffs</span>
         </div>
       </div>
-    </section>
   </template>
   
   <script lang="ts">

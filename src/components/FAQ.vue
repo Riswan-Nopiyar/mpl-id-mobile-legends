@@ -1,5 +1,4 @@
 <template>
-  <section class="title-ornaments mt-14 pb-16">
     <div class="container mx-auto md:px-20">
       <h4 class="text-center font-origin text-gray-600 font-bold uppercase">
         FAQ
@@ -57,10 +56,6 @@
         </a>
       </div>
 
-
-
-
-
       <!-- Questions Section -->
       <div
         class="flex flex-col lg:flex-row items-start lg:items-center mt-2 border-t border-dashed border-gray-300 pt-4 text-sm mx-3"
@@ -83,7 +78,6 @@
         </div>
       </div>
     </div>
-  </section>
 </template>
 
 <script>

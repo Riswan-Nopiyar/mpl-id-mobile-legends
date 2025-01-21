@@ -1,5 +1,4 @@
 <template>
-  <section class="title-ornaments mt-14 pb-16">
     <div class="container mx-auto md:px-20">
       <h4 class="text-center font-origin text-gray-600 font-bold uppercase">News</h4>
 
@@ -11,8 +10,8 @@
               <img :src="news.image" alt="News Image" class="w-full h-full object-cover" loading="eager" />
               <div class="absolute bottom-0 left-0 w-full bg-white bg-opacity-80 p-4">
                 <div class="text-sm text-gray-500">{{ news.date }}</div>
-                <div class="font-bold text-lg text-gray-800 leading-snug">
-                  {{ truncate(news.title, 58) }}
+                <div class="font-bold text-xl text-gray-800 leading-snug line-clamp-2">
+                  {{ news.title }}
                 </div>
               </div>
             </div>
@@ -38,14 +37,9 @@
                     {{ news.date }}
                   </div>
                   <div
-                    class="font-semibold text-sm text-gray-800 leading-tight block lg:hidden hover:text-[#640000]"
+                    class="font-semibold text-sm text-gray-800 leading-tight hover:text-[#640000] line-clamp-3"
                     style="max-width: 200px;">
-                    {{ truncate(news.title, 60) }}
-                  </div>
-                  <div
-                    class="font-semibold text-sm text-gray-800 leading-tight hidden lg:block hover:text-[#640000]"
-                    style="max-width: 200px;">
-                    {{ truncate(news.title, 60) }}
+                    {{ news.title }}
                   </div>
                 </div>
               </div>
@@ -54,7 +48,6 @@
         </div>
       </div>
     </div>
-  </section>
 </template>
 
 <script lang="ts">
@@ -95,24 +88,11 @@ export default defineComponent({
       subNews: this.newsData.subNews,
     };
   },
-  methods: {
-    // Fungsi untuk memotong teks panjang
-    truncate(text: string, maxLength: number): string {
-      if (text.length > maxLength) {
-        return text.substring(0, maxLength) + "...";
-      }
-      return text;
-    },
-  },
 });
 </script>
 
 
 <style scoped>
-.title-ornaments {
-  margin-top: 56px;
-  padding-bottom: 64px;
-}
 
 .sub-news img {
   border-radius: 10px;

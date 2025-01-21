@@ -18,47 +18,47 @@
         <nav id="primary-menu" :class="{ hidden: !isMenuOpen, flex: isMenuOpen }"
           class="primary-menu flex-col lg:flex lg:flex-row lg:space-x-3 mt-10 lg:mt-0 mx-3 lg:mx-0 lg:items-center w-full lg:w-auto space-y-4 lg:space-y-0">
           <!-- Menu Items -->
-          <a href="/" :class="getActiveClass('/')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">
+          <router-link to="/" :class="getActiveClass('/')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">
             Home
-          </a>
-          <a href="/teams" :class="getActiveClass('/teams')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">
+          </router-link>
+          <router-link to="/teams" :class="getActiveClass('/teams')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">
             Tim
-          </a>
-          <a href="/transfer" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Transfer</a>
-          <a href="/schedule" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Jadwal</a>
-          <a href="/ticket" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Tiket</a>
-          <a href="/career" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Career</a>
-          <a href="https://id-mpl.com/m6" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex flex-col items-center text-center">
+          </router-link>
+          <router-link to="/transfer" :class="getActiveClass('/transfer')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Transfer</router-link>
+          <router-link to="/schedule" :class="getActiveClass('/schedule')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Jadwal</router-link>
+          <router-link to="/ticket" :class="getActiveClass('/ticket')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Tiket</router-link>
+          <router-link to="/career" :class="getActiveClass('/career')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Career</router-link>
+          <router-link to="https://id-mpl.com/m6" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex flex-col items-center text-center">
             <div class="flex items-center space-x-2">
               <img src="/icons/logo-m6.png" alt="M6" class="w-5 h-5" />
               <span class="text-lg">M6</span>
             </div>
             <span class="text-xs">#M6NYALAINDONESIA</span>
-          </a>
-          <a href="/statistics" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Statistik</a>
-          <a href="/news" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Berita</a>
+          </router-link>
+          <router-link to="/statistics" :class="getActiveClass('/statistics')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Statistik</router-link>
+          <router-link to="/news" :class="getActiveClass('/news')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Berita</router-link>
 
           <!-- Dropdown -->
           <div class="relative group">
-            <a href="/about" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">
+            <router-link to="/about" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">
               Tentang Kita
               <i class="icon-angle-down ml-2"></i>
-            </a>
+            </router-link>
             <ul
               class="absolute hidden group-hover:block bg-white font-medium text-black shadow-md rounded mt-2 w-48 border-t-2 border-red-600">
               <li>
-                <a href="/mpljourney" class="block px-4 py-2 hover:bg-gray-100 border-b border-black">
+                <router-link to="/mpljourney" class="block px-4 py-2 hover:bg-gray-100 border-b border-black">
                   MPL JOURNEY
-                </a>
+                </router-link>
               </li>
               <li>
-                <a href="/" class="block px-4 py-2 hover:bg-gray-100">SEASON 14</a>
+                <router-link to="/" class="block px-4 py-2 hover:bg-gray-100">SEASON 14</router-link>
               </li>
               <li>
-                <a href="https://id-mpl.com/s13" class="block px-4 py-2 hover:bg-gray-100">SEASON 13</a>
+                <router-link to="https://id-mpl.com/s13" class="block px-4 py-2 hover:bg-gray-100">SEASON 13</router-link>
               </li>
               <li>
-                <a href="https://id-mpl.com/s12" class="block px-4 py-2 hover:bg-gray-100">SEASON 12</a>
+                <router-link to="https://id-mpl.com/s12" class="block px-4 py-2 hover:bg-gray-100">SEASON 12</router-link>
               </li>
             </ul>
           </div>
@@ -141,6 +141,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue";
 import { useRoute } from "vue-router";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export default defineComponent({
   name: "DefaultLayout",

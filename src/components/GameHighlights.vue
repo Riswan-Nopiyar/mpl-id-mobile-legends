@@ -1,5 +1,4 @@
 <template>
-  <section class="title-ornaments mt-14 pb-16">
     <div class="container mx-auto md:px-20">
       <!-- Section Title -->
       <h4 class="text-center font-origin text-gray-600 font-bold uppercase">Game Highlights</h4>
@@ -47,7 +46,6 @@
         </div>
       </div>
     </div>
-  </section>
 </template>
 
 <script lang="ts">

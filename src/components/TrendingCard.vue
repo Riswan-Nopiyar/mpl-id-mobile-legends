@@ -1,5 +1,4 @@
 <template>
-    <section class="title-ornaments mt-14 pb-16">
       <div class="container mx-auto md:px-14 relative">
         <h4 class="text-center font-origin text-gray-600 font-bold uppercase">Trending</h4>
   
@@ -26,7 +25,6 @@
           </template>
         </Carousel>
       </div>
-    </section>
   </template>
   
   <script lang="ts">
@@ -53,6 +51,7 @@
       return {
         trending: trending as unknown as TrendingData[],
         carouselConfig: {
+          touchDrag: true,
           wrapAround: true, // Carousel melingkar
           snapAlign: "center", // Item snap ke tengah
           autoplay: false, // Autoplay dimatikan

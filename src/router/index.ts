@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import DefaultLayout from "../layouts/DefaultLayout.vue";
-import HomePage from "../views/HomePage.vue";
-import TeamsEsport from "../views/TeamsEsport.vue";
 import PageError404 from "../views/errors/PageError404.vue";
+import HomePage from "../views/HomePage.vue";
+import EsportTeams from "../views/EsportTeams.vue";
+import PlayerTransfer from "../views/PlayerTransfer.vue";
+import NewsPage from "../views/NewsPage.vue";
 
 const routes = [
   {
@@ -23,7 +25,17 @@ const routes = [
       {
         path: "/teams",
         name: "Teams",
-        component: TeamsEsport,
+        component: EsportTeams,
+      },
+      {
+        path: "/transfer",
+        name: "Transfer",
+        component: PlayerTransfer,
+      },
+      {
+        path: "/news",
+        name: "News",
+        component: NewsPage,
       },
     ],
   },

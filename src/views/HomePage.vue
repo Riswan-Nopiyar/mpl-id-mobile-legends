@@ -35,13 +35,35 @@
       </template>
     </Carousel>
   </section>
+
+  <section class="title-ornaments mt-16 pb-16">
   <StandingsTable />
+  </section>
+
+  <section class="title-ornaments mt-16 pb-16">
   <TrendingCard />
+  </section>
+
+  <section class="title-ornaments mt-16 pb-16">
   <NewsSection />
+  </section>
+
+  <section class="title-ornaments mt-16 pb-16">
   <GameHighlights />
+  </section>
+
+  <section class="title-ornaments mt-16 pb-16">
   <FAQ />
+  </section>
+
+  <section class="title-ornaments mt-16 pb-16">
   <AboutUs />
+  </section>
+
+  <section class="mt-14 pb-16 ">
   <SponsorsSection />
+  </section>
+
 </template>
 
 <script lang="ts">
@@ -97,6 +119,7 @@ export default defineComponent({
         transition: 600,
         snapAlign: "center",
         itemsToShow: 1,
+        touchDrag: true
       },
     };
   },

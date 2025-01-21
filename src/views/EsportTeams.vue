@@ -87,7 +87,7 @@ import { defineComponent } from "vue";
 import SponsorsSection from "@/components/SponsorsSection.vue";
 
 export default defineComponent({
-    name: "TeamsEsport",
+    name: "EsportTeams",
     components: {
       SponsorsSection
     },

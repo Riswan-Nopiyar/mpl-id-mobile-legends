@@ -1,5 +1,4 @@
 <template>
-  <section class="title-ornaments mt-14 pb-16">
     <div class="container mx-auto md:px-20">
       <!-- Title -->
       <h4 class="text-center font-origin text-gray-600 font-bold uppercase">
@@ -49,7 +48,6 @@
         </div>
       </div>
     </div>
-  </section>
 </template>
   
   <script lang="ts">
@@ -59,8 +57,4 @@
     name: "AboutUs",
   });
   </script>
-  
-  <style scoped>
-  /* Tambahan opsional jika diperlukan styling custom */
-  </style>
   
