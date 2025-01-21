@@ -1,6 +1,9 @@
 # Vue 3 + TypeScript + Vite + TailwindCSS
 
-### Progress: 20%
+<b>Link Demo :</b> <a href="https://mpl-indonesia.vercel.app" target="_blank">https://mpl-indonesia.vercel.app</a>
+<br />
+<b>Link Official :</b> <a href="https://id-mpl.com" target="_blank">https://id-mpl.com</a>
+### Path Url : "/" and "/teams"
 
 #### Oleh: Riswan Nopiyar
 
@@ -90,7 +93,6 @@ src/
 
 ## Perkembangan Proyek
 
-- **Progres Keseluruhan**: 20%
 - **Fitur yang Selesai**:
   - Pengaturan dasar proyek dengan Vite
   - Integrasi TailwindCSS
