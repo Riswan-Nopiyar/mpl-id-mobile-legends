@@ -11,6 +11,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
     "dompurify": "^3.2.3",
+    "nprogress": "^0.2.0",
     "pinia": "^2.3.0",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0",
@@ -18,6 +19,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@types/nprogress": "^0.2.3",
     "@typescript-eslint/eslint-plugin": "^8.20.0",
     "@typescript-eslint/parser": "^8.20.0",
     "@vitejs/plugin-vue": "^5.2.1",
