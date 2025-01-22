@@ -50,16 +50,37 @@
   import { defineComponent } from "vue";
   import SponsorsSection from "@/components/SponsorsSection.vue";
   import playerTransfer from "@/assets/json/playerTransfer.json"; // Import JSON file
+  import { z } from "zod"; // Import Zod for validation
+  
+  // Schema definition using Zod
+  const TeamSchema = z.object({
+    name: z.string(),
+    logo: z.string(),
+  });
+  
+  const PlayerSchema = z.object({
+    date: z.string(),
+    playerName: z.string(),
+    role: z.string(),
+    fromTeam: TeamSchema,
+    toTeam: TeamSchema,
+  });
+  
+  const PlayerArraySchema = z.array(PlayerSchema);
+  
+  // Validate JSON data using Zod
+  const validatedPlayers = PlayerArraySchema.parse(playerTransfer);
   
   export default defineComponent({
     name: "PlayerTransfer",
     components: {
       SponsorsSection,
     },
-    data() {
+    data(): { players: z.infer<typeof PlayerArraySchema> } {
       return {
-        players: playerTransfer, // Bind data from JSON file
+        players: validatedPlayers, // Assign validated JSON data
       };
     },
   });
   </script>
+  
