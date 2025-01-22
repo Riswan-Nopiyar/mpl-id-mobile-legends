@@ -5,6 +5,9 @@ import HomePage from "../views/HomePage.vue";
 import EsportTeams from "../views/EsportTeams.vue";
 import PlayerTransfer from "../views/PlayerTransfer.vue";
 import NewsPage from "../views/NewsPage.vue";
+import SchedulePage from "../views/SchedulePage.vue";
+import TicketPage from "../views/TicketPage.vue";
+import AboutPage from "../views/AboutPage.vue";
 
 const routes = [
   {
@@ -36,6 +39,21 @@ const routes = [
         path: "/news",
         name: "News",
         component: NewsPage,
+      },
+      {
+        path: "/schedule",
+        name: "Schedule",
+        component: SchedulePage,
+      },
+      {
+        path: "/ticket",
+        name: "Ticket",
+        component: TicketPage,
+      },
+      {
+        path: "/about",
+        name: "About",
+        component: AboutPage,
       },
     ],
   },

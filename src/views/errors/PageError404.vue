@@ -4,7 +4,7 @@
       ERROR 404
     </h4>
 
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center pb-6">
       <!-- Title -->
       <div class="text-center mt-9">
         <div class="text-muted text-gray-500 text-4xl">
@@ -12,9 +12,6 @@
         </div>
       </div>
 
-      <!-- Spacer -->
-
-      <!-- Image -->
       <div class="lg:w-1/2 lg:mx-auto mt-6 text-center">
         <img
           src="/errors/404-400.png"
@@ -24,14 +21,12 @@
       </div>
     </div>
 
-    <!-- Spacer -->
-    <div class="pb-4" />
   </div>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "PageError404",
+  name: "PageError404"
 });
 </script>

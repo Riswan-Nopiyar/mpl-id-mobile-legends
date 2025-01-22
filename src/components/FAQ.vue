@@ -81,7 +81,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from "vue";
+
+export default defineComponent({
   name: "FAQ",
   data() {
     return {
@@ -130,7 +132,7 @@ export default {
       this.faqs[index].open = !this.faqs[index].open;
     },
   },
-};
+});
 </script>
 
 <style scoped>

@@ -14,7 +14,7 @@
           </thead>
           <tbody>
             <tr
-v-for="team in standings" :key="team.rank" :class="{ 'bg-red-300': team.rank > standings.length - 3 }"
+v-for="team in standings" :key="team.rank" :class="{ 'bg-red-200': team.rank > standings.length - 3 }"
               class="border-t text-[0.8rem] md:text-[0.9rem] font-semibold">
               <td class="p-1 whitespace-nowrap">
                 <div class="flex items-center space-x-1 md:space-x-3">

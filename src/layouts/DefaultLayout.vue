@@ -18,29 +18,39 @@
         <nav id="primary-menu" :class="{ hidden: !isMenuOpen, flex: isMenuOpen }"
           class="primary-menu flex-col lg:flex lg:flex-row lg:space-x-3 mt-10 lg:mt-0 mx-3 lg:mx-0 lg:items-center w-full lg:w-auto space-y-4 lg:space-y-0">
           <!-- Menu Items -->
-          <router-link to="/" :class="getActiveClass('/')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">
+          <router-link to="/" :class="getActiveClass('/')"
+            class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">
             Home
           </router-link>
-          <router-link to="/teams" :class="getActiveClass('/teams')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">
+          <router-link to="/teams" :class="getActiveClass('/teams')"
+            class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">
             Tim
           </router-link>
-          <router-link to="/transfer" :class="getActiveClass('/transfer')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Transfer</router-link>
-          <router-link to="/schedule" :class="getActiveClass('/schedule')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Jadwal</router-link>
-          <router-link to="/ticket" :class="getActiveClass('/ticket')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Tiket</router-link>
-          <router-link to="/career" :class="getActiveClass('/career')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Career</router-link>
-          <router-link to="https://id-mpl.com/m6" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex flex-col items-center text-center">
+          <router-link to="/transfer" :class="getActiveClass('/transfer')"
+            class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Transfer</router-link>
+          <router-link to="/schedule" :class="getActiveClass('/schedule')"
+            class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Jadwal</router-link>
+          <router-link to="/ticket" :class="getActiveClass('/ticket')"
+            class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Tiket</router-link>
+          <router-link to="/career" :class="getActiveClass('/career')"
+            class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Career</router-link>
+          <router-link to="https://id-mpl.com/m6"
+            class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex flex-col items-center text-center">
             <div class="flex items-center space-x-2">
               <img src="/icons/logo-m6.png" alt="M6" class="w-5 h-5" />
               <span class="text-lg">M6</span>
             </div>
             <span class="text-xs">#M6NYALAINDONESIA</span>
           </router-link>
-          <router-link to="/statistics" :class="getActiveClass('/statistics')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Statistik</router-link>
-          <router-link to="/news" :class="getActiveClass('/news')" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Berita</router-link>
+          <router-link to="/statistics" :class="getActiveClass('/statistics')"
+            class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Statistik</router-link>
+          <router-link to="/news" :class="getActiveClass('/news')"
+            class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">Berita</router-link>
 
           <!-- Dropdown -->
           <div class="relative group">
-            <router-link to="/about" class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">
+            <router-link to="/about"
+              class="border-b pb-3 lg:border-b-0 lg:pb-0 hover:text-red-600 font-400 flex items-center">
               Tentang Kita
               <i class="icon-angle-down ml-2"></i>
             </router-link>
@@ -55,10 +65,12 @@
                 <router-link to="/" class="block px-4 py-2 hover:bg-gray-100">SEASON 14</router-link>
               </li>
               <li>
-                <router-link to="https://id-mpl.com/s13" class="block px-4 py-2 hover:bg-gray-100">SEASON 13</router-link>
+                <router-link to="https://id-mpl.com/s13" class="block px-4 py-2 hover:bg-gray-100">SEASON
+                  13</router-link>
               </li>
               <li>
-                <router-link to="https://id-mpl.com/s12" class="block px-4 py-2 hover:bg-gray-100">SEASON 12</router-link>
+                <router-link to="https://id-mpl.com/s12" class="block px-4 py-2 hover:bg-gray-100">SEASON
+                  12</router-link>
               </li>
             </ul>
           </div>
@@ -117,7 +129,7 @@
             </div>
 
             <div class="md:mt-0 lg:hidden">
-              <button id="gotoTop"
+              <button id="gotoTop" @click="scrollToTop"
                 class="bg-red-950 text-white hover:bg-[#640000] my-0 py-3 px-8 text-sm shadow-lg focus:outline-none">
                 <i class="fas fa-angle-up"></i>
               </button>
@@ -159,11 +171,27 @@ export default defineComponent({
       isMenuOpen.value = !isMenuOpen.value;
     };
 
+    // Fungsi untuk scroll ke atas
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth", // Smooth scrolling effect
+      });
+    };
+
     return {
       getActiveClass,
       isMenuOpen,
       toggleMenu,
+      scrollToTop, // Tambahkan fungsi ini
     };
   },
 });
 </script>
+
+<style scoped>
+/* Pastikan tombol tetap di posisi tetap */
+#gotoTop {
+  z-index: 50; /* Agar tombol berada di atas elemen lain */
+}
+</style>
