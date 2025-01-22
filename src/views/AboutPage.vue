@@ -1,5 +1,5 @@
 <template>
-  <section class="bg-s7 pb-16 -mt-4">
+  <section class="bg-s7 pb-16">
     <!-- Title Section -->
     <div class="container mx-auto md:px-64 text-center">
       <h4 class="text-center font-origin font-bold text-gray-600 uppercase">
