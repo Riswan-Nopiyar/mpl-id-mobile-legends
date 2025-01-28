@@ -1,0 +1,37 @@
+[
+    {
+      "name": "DEWA",
+      "image": "https://id-mpl.com/do/season14/banner/dewa.png",
+      "link": "https://id-mpl.com/career/dewa"
+    },
+    {
+      "name": "GEEK FAM",
+      "image": "https://id-mpl.com/do/season14/banner/geek.png",
+      "link": "https://id-mpl.com/career/geek-fam"
+    },
+    {
+      "name": "ONIC",
+      "image": "https://id-mpl.com/do/season14/banner/onci.png",
+      "link": "https://id-mpl.com/career/onic"
+    },
+    {
+      "name": "ORAIMO",
+      "image": "https://id-mpl.com/do/season14/banner/oraimo.png",
+      "link": "https://id-mpl.com/career/oraimo"
+    },
+    {
+      "name": "GGWP",
+      "image": "https://id-mpl.com/do/season14/banner/Ggwp_logo.png",
+      "link": "https://id-mpl.com/career/ggwp"
+    },
+    {
+      "name": "MINESKI",
+      "image": "https://id-mpl.com/do/season14/banner/mineskiindo.png",
+      "link": "https://id-mpl.com/career/mineski"
+    },
+    {
+      "name": "REVIVAL TV",
+      "image": "https://id-mpl.com/do/season14/banner/revival.png",
+      "link": "https://id-mpl.com/career/revival-tv"
+    }
+]

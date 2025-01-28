@@ -6,7 +6,7 @@
       </h4>
       <div class="flex flex-wrap justify-center gap-1 pt-5 pb-11">
         <div
-          v-for="team in teams"
+          v-for="team in esportTeams"
           :key="team.id"
           class="relative w-full mx-3 md:max-w-[95px] m-2"
           style="filter: drop-shadow(0 0.2rem 0.25rem rgba(0, 0, 0, 0.35));"
@@ -58,6 +58,7 @@
                     <img
                       :src="team.logo"
                       :alt="team.name"
+                      loading="eager"
                       class="max-w-[50px] md:max-w-[85px] -mt-3 md:mt-24 relative"
                     >
                   </div>
@@ -85,26 +86,26 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import SponsorsSection from "@/components/SponsorsSection.vue";
+import esportTeamsData from "@/assets/json/esportTeams.json";
+
+interface EsportTeam {
+  id: number;
+  name: string;
+  logo: string;
+  link: string;
+  isSpecial: boolean;
+}
 
 export default defineComponent({
-    name: "EsportTeams",
-    components: {
-      SponsorsSection
-    },
-    data() {
-        return {
-            teams: [
-                { id: 1, name: "AE", logo: "/esport/teams/ae-256.webp", link: "/team/ae", isSpecial: false },
-                { id: 2, name: "BTR", logo: "/esport/teams/btr-256.webp", link: "/team/btr", isSpecial: false },
-                { id: 3, name: "DEWA", logo: "/esport/teams/dewa-united-500.webp", link: "/team/dewa", isSpecial: false },
-                { id: 4, name: "EVOS", logo: "/esport/teams/evos-500.webp", link: "/team/evos", isSpecial: false },
-                { id: 5, name: "FNOC", logo: "/esport/teams/fnoc-500.webp", link: "/team/fnoc", isSpecial: false },
-                { id: 6, name: "GEEK", logo: "/esport/teams/geek-500.webp", link: "/team/geek", isSpecial: false },
-                { id: 7, name: "RBL", logo: "/esport/teams/rbl-500.webp", link: "/team/rbl", isSpecial: false },
-                { id: 8, name: "RRQ", logo: "/esport/teams/rrq-500.webp", link: "/team/rrq", isSpecial: true },
-                { id: 9, name: "TLID", logo: "/esport/teams/TLID-500.webp", link: "/team/tlid", isSpecial: true },
-            ],
-        };
-    },
+
+  name: "EsportTeams",
+  components: {
+    SponsorsSection
+  },
+  data() {
+    return {
+      esportTeams: esportTeamsData as unknown as EsportTeam[]
+    };
+  }
 });
 </script>

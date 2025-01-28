@@ -93,7 +93,6 @@ export default defineComponent({
 
 
 <style scoped>
-
 .sub-news img {
   border-radius: 10px;
 }

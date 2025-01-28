@@ -1,0 +1,66 @@
+[
+    {
+      "id": 1,
+      "name": "AE",
+      "logo": "/esport/teams/ae-256.webp",
+      "link": "/team/ae",
+      "isSpecial": false
+    },
+    {
+      "id": 2,
+      "name": "BTR",
+      "logo": "/esport/teams/btr-256.webp",
+      "link": "/team/btr",
+      "isSpecial": false
+    },
+    {
+      "id": 3,
+      "name": "DEWA",
+      "logo": "/esport/teams/dewa-united-500.webp",
+      "link": "/team/dewa",
+      "isSpecial": false
+    },
+    {
+      "id": 4,
+      "name": "EVOS",
+      "logo": "/esport/teams/evos-500.webp",
+      "link": "/team/evos",
+      "isSpecial": false
+    },
+    {
+      "id": 5,
+      "name": "FNOC",
+      "logo": "/esport/teams/fnoc-500.webp",
+      "link": "/team/fnoc",
+      "isSpecial": false
+    },
+    {
+      "id": 6,
+      "name": "GEEK",
+      "logo": "/esport/teams/geek-500.webp",
+      "link": "/team/geek",
+      "isSpecial": false
+    },
+    {
+      "id": 7,
+      "name": "RBL",
+      "logo": "/esport/teams/rbl-500.webp",
+      "link": "/team/rbl",
+      "isSpecial": false
+    },
+    {
+      "id": 8,
+      "name": "RRQ",
+      "logo": "/esport/teams/rrq-500.webp",
+      "link": "/team/rrq",
+      "isSpecial": true
+    },
+    {
+      "id": 9,
+      "name": "TLID",
+      "logo": "/esport/teams/tlid-500.webp",
+      "link": "/team/tlid",
+      "isSpecial": true
+    }
+  ]
+  

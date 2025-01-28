@@ -10,6 +10,7 @@ import PlayerTransfer from "@/views/PlayerTransfer.vue";
 import NewsPage from "@/views/NewsPage.vue";
 import SchedulePage from "@/views/SchedulePage.vue";
 import TicketPage from "@/views/TicketPage.vue";
+import CareerPage from "@/views/CareerPage.vue";
 import AboutPage from "@/views/AboutPage.vue";
 
 NProgress.configure({ showSpinner: false, speed: 700, minimum: 0.2 });
@@ -54,6 +55,11 @@ const routes = [
         path: "/ticket",
         name: "Ticket",
         component: TicketPage,
+      },
+      {
+        path: "/career",
+        name: "Career",
+        component: CareerPage,
       },
       {
         path: "/about",
