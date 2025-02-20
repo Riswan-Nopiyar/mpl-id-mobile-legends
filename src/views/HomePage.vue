@@ -4,24 +4,16 @@
       <Slide class="p-0">
         <a href="#">
           <div class="aspect-w-16 aspect-h-9">
-            <img
-              src="/images/Champions_Banner_MPLID_S14.webp"
-              alt="Champions Banner MPL ID S14"
-              class="w-full h-full object-cover"
-              loading="eager"
-            />
+            <img src="/images/Champions_Banner_MPLID_S14.webp" alt="Champions Banner MPL ID S14"
+              class="w-full h-full object-cover" loading="eager" />
           </div>
         </a>
       </Slide>
       <Slide class="p-0">
         <a href="#">
           <div class="aspect-w-16 aspect-h-9">
-            <img
-              src="/images/M6nyala-Indonesia.webp"
-              alt="M6 Nyala Indonesia"
-              class="w-full h-full object-cover"
-              loading="eager"
-            />
+            <img src="/images/M6nyala-Indonesia.webp" alt="M6 Nyala Indonesia" class="w-full h-full object-cover"
+              loading="eager" />
           </div>
         </a>
       </Slide>
@@ -37,31 +29,31 @@
   </section>
 
   <section class="title-ornaments mt-16 pb-16">
-  <StandingsTable />
+    <StandingsSection />
   </section>
 
   <section class="title-ornaments mt-16 pb-16">
-  <TrendingCard />
+    <TrendingCard />
   </section>
 
   <section class="title-ornaments mt-16 pb-16">
-  <NewsSection />
+    <NewsSection />
   </section>
 
   <section class="title-ornaments mt-16 pb-16">
-  <GameHighlights />
+    <GameHighlights />
   </section>
 
   <section class="title-ornaments mt-16 pb-16">
-  <FAQ />
+    <FAQ />
   </section>
 
   <section class="title-ornaments mt-16 pb-16">
-  <AboutUs />
+    <AboutUs />
   </section>
 
   <section class="mt-14 pb-16 ">
-  <SponsorsSection />
+    <SponsorsSection />
   </section>
 
 </template>
@@ -70,7 +62,7 @@
 import { defineComponent, ref } from "vue";
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Slide } from "vue3-carousel";
-import StandingsTable from "@/components/StandingsTable.vue";
+import StandingsSection from "@/components/StandingsSection.vue";
 import TrendingCard from "@/components/TrendingCard.vue";
 import NewsSection from "@/components/NewsSection.vue";
 import GameHighlights from "@/components/GameHighlights.vue";
@@ -89,7 +81,7 @@ export default defineComponent({
   components: {
     Carousel,
     Slide,
-    StandingsTable,
+    StandingsSection,
     TrendingCard,
     NewsSection,
     GameHighlights,
@@ -133,14 +125,17 @@ export default defineComponent({
   width: 100%;
   overflow: hidden;
 }
+
 .hero-carousel {
   position: relative;
   width: 100%;
 }
+
 .hero-carousel img {
   margin: 0;
   padding: 0;
 }
+
 /* Gaya default untuk .carousel-control */
 .carousel-control {
   position: absolute;
@@ -159,12 +154,15 @@ export default defineComponent({
   justify-content: center;
   transition: 0.3s ease-in-out;
 }
+
 .carousel-control.prev {
   left: 10px;
 }
+
 .carousel-control.next {
   right: 10px;
 }
+
 .carousel-control:hover {
   background: rgba(0, 0, 0, 0.8);
   transform: translateY(-50%) scale(1.1);
@@ -173,16 +171,22 @@ export default defineComponent({
 /* Media query untuk layar di bawah ukuran md (max-width: 768px) */
 @media screen and (max-width: 768px) {
   .carousel-control {
-    font-size: 20px; /* Ukuran font lebih kecil */
-    padding: 8px 10px; /* Padding lebih kecil */
-    margin: 0 -5px; /* Margin lebih kecil */
+    font-size: 20px;
+    /* Ukuran font lebih kecil */
+    padding: 8px 10px;
+    /* Padding lebih kecil */
+    margin: 0 -5px;
+    /* Margin lebih kecil */
   }
+
   .carousel-control.prev {
-    left: 5px; /* Jarak dari kiri lebih kecil */
+    left: 5px;
+    /* Jarak dari kiri lebih kecil */
   }
+
   .carousel-control.next {
-    right: 5px; /* Jarak dari kanan lebih kecil */
+    right: 5px;
+    /* Jarak dari kanan lebih kecil */
   }
 }
-
 </style>
