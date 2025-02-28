@@ -52,38 +52,58 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import type { PropType } from "vue"; // Menggunakan type-only import
+import type { PropType } from "vue";
 import News from "@/assets/json/news.json";
+import { z } from "zod";
 
-// Definisi Interface untuk tipe props
-interface HighlightNews {
-  image: string;
-  title: string;
-  date: string;
-  url: string;
-}
+// Validasi data JSON langsung
+const validatedNews = z.object({
+  highlightNews: z.array(z.object({
+    image: z.string(),
+    title: z.string(),
+    date: z.string(),
+    url: z.string()
+  })),
+  subNews: z.array(z.array(z.object({
+    image: z.string(),
+    title: z.string(),
+    date: z.string(),
+    url: z.string()
+  })))
+}).safeParse(News);
 
-interface NewsData {
-  highlightNews: HighlightNews[];
-  subNews: HighlightNews[][];
-}
+// Tipe dari hasil validasi
+type NewsData = {
+  highlightNews: {
+    image: string;
+    title: string;
+    date: string;
+    url: string;
+  }[];
+  subNews: {
+    image: string;
+    title: string;
+    date: string;
+    url: string;
+  }[][];
+};
+
+// Data default jika validasi gagal
+const defaultNewsData: NewsData = validatedNews.success 
+  ? validatedNews.data 
+  : { highlightNews: [], subNews: [] };
 
 export default defineComponent({
   name: "NewsSection",
   props: {
     newsData: {
-      type: Object as PropType<NewsData>, // Tipe props ditentukan sebagai NewsData
-      required: false, // Props tidak wajib
-      default: () => ({
-        // Nilai default jika newsData tidak diberikan
-        highlightNews: News.highlightNews,
-        subNews: News.subNews,
-      }),
+      type: Object as PropType<NewsData>,
+      required: false,
+      default: () => defaultNewsData,
     },
   },
   data() {
     return {
-      // Data lokal yang menggunakan props sebagai fallback
       highlightNews: this.newsData.highlightNews,
       subNews: this.newsData.subNews,
     };

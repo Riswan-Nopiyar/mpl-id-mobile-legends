@@ -29,40 +29,21 @@
   
   <script lang="ts">
   import { defineComponent } from "vue";
-  import rawNewsList from "@/assets/json/newsList.json"; // Impor data JSON
+  import rawNewsList from "@/assets/json/newsList.json";
   import NewsSection from "@/components/NewsSection.vue";
   import SponsorsSection from "@/components/SponsorsSection.vue";
+  import { z } from "zod";
   
-  // Tipe untuk NewsItem
-  interface NewsItem {
-    date: string;
-    title: string;
-    image: string;
-    link: string;
-  }
+  // Validasi data JSON langsung
+  const validatedNewsList = z.array(z.object({
+    date: z.string(),
+    title: z.string(),
+    image: z.string(),
+    link: z.string()
+  })).safeParse(rawNewsList);
   
-  // Fungsi validasi untuk memastikan JSON sesuai dengan tipe NewsItem[]
-  const validateNewsList = (data: unknown): NewsItem[] => {
-    if (!Array.isArray(data)) {
-      throw new Error("Invalid data format: not an array");
-    }
-  
-    // Validasi setiap item dalam array
-    const validatedData = data.filter((item): item is NewsItem => {
-      return (
-        typeof item.date === "string" &&
-        typeof item.title === "string" &&
-        typeof item.image === "string" &&
-        typeof item.link === "string"
-      );
-    });
-  
-    if (validatedData.length !== data.length) {
-      throw new Error("Invalid data: some items do not match NewsItem type");
-    }
-  
-    return validatedData;
-  };
+  // Data default jika validasi gagal
+  const newsList = validatedNewsList.success ? validatedNewsList.data : [];
   
   export default defineComponent({
     name: "NewsPage",
@@ -72,9 +53,8 @@
     },
     data() {
       return {
-        newsList: validateNewsList(rawNewsList), // Validasi data JSON
+        newsList: newsList,
       };
     },
   });
   </script>
-  

@@ -87,24 +87,28 @@
 import { defineComponent } from "vue";
 import SponsorsSection from "@/components/SponsorsSection.vue";
 import esportTeamsData from "@/assets/json/esportTeams.json";
+import { z } from "zod";
 
-interface EsportTeam {
-  id: number;
-  name: string;
-  logo: string;
-  link: string;
-  isSpecial: boolean;
-}
+// Validasi data JSON langsung
+const validatedEsportTeams = z.array(z.object({
+  id: z.number(),
+  name: z.string(),
+  logo: z.string(),
+  link: z.string(),
+  isSpecial: z.boolean()
+})).safeParse(esportTeamsData);
+
+// Data default jika validasi gagal
+const esportTeams = validatedEsportTeams.success ? validatedEsportTeams.data : [];
 
 export default defineComponent({
-
   name: "EsportTeams",
   components: {
     SponsorsSection
   },
   data() {
     return {
-      esportTeams: esportTeamsData as unknown as EsportTeam[]
+      esportTeams: esportTeams
     };
   }
 });

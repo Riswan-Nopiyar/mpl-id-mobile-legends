@@ -63,23 +63,28 @@
 import { defineComponent } from "vue";
 import SponsorsSection from "@/components/SponsorsSection.vue";
 import careerPartnerData from "@/assets/json/careerPartner.json";
+import { z } from "zod";
 
-interface CareerPartner {
-    name: string;
-    image: string;
-    link: string;
-}
+// Validasi data JSON langsung
+const validatedCareerPartners = z.array(z.object({
+  name: z.string(),
+  image: z.string(),
+  link: z.string()
+})).safeParse(careerPartnerData);
+
+// Data default jika validasi gagal
+const careerPartners = validatedCareerPartners.success ? validatedCareerPartners.data : [];
 
 export default defineComponent({
-    name: "TicketPage",
-    components: {
-        SponsorsSection
-    },
-    data() {
-        return {
-            careerPartner: careerPartnerData as unknown as CareerPartner[]
-        };
-    }
+  name: "CareerPage",
+  components: {
+    SponsorsSection
+  },
+  data() {
+    return {
+      careerPartner: careerPartners
+    };
+  }
 });
 </script>
 

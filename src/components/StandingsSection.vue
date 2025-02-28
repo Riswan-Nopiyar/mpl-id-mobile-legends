@@ -43,26 +43,33 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import standings from "@/assets/json/standings.json";
+import standingsRaw from "@/assets/json/standings.json";
+import { z } from "zod";
 
-interface StandingsData {
-  rank: number;
-  team: string;
-  abbreviation: string;
-  logo: string;
-  matchPoints: number;
-  matchWin: number;
-  matchLose: number;
-  netGameWin: number;
-  gameWin: number;
-  gameLose: number;
-}
+const StandingsDataSchema = z.object({
+  rank: z.number(),
+  team: z.string(),
+  abbreviation: z.string(),
+  logo: z.string(),
+  matchPoints: z.number(),
+  matchWin: z.number(),
+  matchLose: z.number(),
+  netGameWin: z.number(),
+  gameWin: z.number(),
+  gameLose: z.number(),
+});
+
+// Pastikan standings adalah array dengan item yang sesuai skema
+const StandingsArraySchema = z.array(StandingsDataSchema);
+
+// Validasi data sebelum dipakai
+const parsedStandings = StandingsArraySchema.safeParse(standingsRaw);
 
 export default defineComponent({
   name: "StandingsSection",
   data() {
     return {
-      standings: standings as unknown as StandingsData[],
+      standings: parsedStandings.success ? parsedStandings.data : [],
     };
   },
 });

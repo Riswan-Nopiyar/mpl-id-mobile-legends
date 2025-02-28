@@ -50,24 +50,51 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import videoPlaylist from "@/assets/json/videoPlaylist.json";
+import videoPlaylistRaw from "@/assets/json/videoPlaylist.json";
+import { z } from "zod";
 
-// Define interface Video
+// Define interface Video untuk fallback
 interface Video {
-  id: string;
+  id: number;
   title: string;
   url: string;
   thumbnail: string;
   category: string;
 }
 
+// Definisi Skema Zod untuk Video
+const VideoSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  url: z.string(),
+  thumbnail: z.string(),
+  category: z.string(),
+});
+
+// Definisi Skema untuk Array Video
+const VideoArraySchema = z.array(VideoSchema);
+
+// Validasi Data JSON dengan Zod
+const parseResult = VideoArraySchema.safeParse(videoPlaylistRaw);
+
+// PENTING: Gunakan data original jika validasi gagal, bukan array kosong
+const videoPlaylist = parseResult.success 
+  ? parseResult.data 
+  : (videoPlaylistRaw as unknown as Video[]);
+
+// Log untuk debugging
+console.log("Validation success:");
+if (!parseResult.success) {
+  console.error("Validation errors:");
+}
+
 export default defineComponent({
   name: "GameHighlights",
   data() {
     return {
-      videos: videoPlaylist as unknown as Video[],
-      filteredVideos: videoPlaylist as unknown as Video[],
-      currentVideo: (videoPlaylist as unknown as Video[])[0].url,
+      videos: videoPlaylist,
+      filteredVideos: videoPlaylist,
+      currentVideo: videoPlaylist.length > 0 ? videoPlaylist[0].url : "",
       selectedCategory: "playoffs",
       categories: [
         { value: "playoffs", label: "Playoffs" },
@@ -84,6 +111,7 @@ export default defineComponent({
     };
   },
   mounted() {
+    console.log("Component mounted, videos:");
     this.filterVideos(); // Filter video saat komponen dimuat
   },
   methods: {
